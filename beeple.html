@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!-- Git testing -->
+
+<head>
+
+    <title>Beeple</title>    
+
+</head>
+
+<body>
+
+    <div>
+
+        <h1>Hive Inspection Sheet</h1>
+
+        <div>
+
+            <form>
+
+                <div>
+
+                    Hive ID: <input type="text" name="HiveID">
+
+                    Date: <input type="date" name="Date">
+
+                    Who Worked Hive: <input type="text" name="Worker">
+                    
+                    Location: <input type="text" name="Loc"><br>
+                    
+                    Hive Size:
+                    
+                    Deeps:<input type="number" name="#ofDeeps">
+                    
+                    Mediums:<input type="number" name="#ofMediums">
+                    
+                    Shallows:<input type="number" name="#ofshallows">
+
+                </div>
+
+                <div>
+
+                    <h4>Hive Temperament</h4>
+
+                    <label><input type="radio" name="Temperament">Calm</label>
+
+                    <label><input type="radio" name="Temperament">Nervous</label>
+
+                    <label><input type="radio" name="Temperament">Aggressive</label>     
+
+                </div>
+
+                <div>
+
+                    <h4>Saw Queen</h4>
+
+                    <label><input type="radio" name="QueenSeen">No</label>
+
+                    <label><input type="radio" name="QueenSeen">Yes</label>
+
+                    <h5>Marked?</h5>
+
+                    <label><input type="radio" name="QueenMarked">No</label>
+
+                    <label><input type="radio" name="QueenMarked">Yes </label>
+
+                    Color:<input type="text" name="QueenColor"> 
+                    
+                    Rough Age of Queen: <input type="number" name="QueenAge">Years
+
+                </div>
+
+                <div>
+
+                    <h4>Laying Pattern</h4>
+
+                    <label><input type="radio" name="LayingPattern">Beautiful (Solid &amp; Uniform) </label>
+
+                    <label><input type="radio" name="LayingPattern">Mediocre (Little spotty) </label>
+
+                    <label><input type="radio" name="LayingPattern">Poor (Spotty) </label>        
+
+                </div>
+
+                <div>
+
+                    <h4>Eggs Seen</h4>
+
+                    <label><input type="radio" name="EggsSeen">Yes</label>
+
+                    <label><input type="radio" name="EggsSeen">No</label> <br>  
+
+                    Comments:<input type="text" name="EggComments">
+
+                </div>
+
+                <div>
+
+                    <h4>Population</h4>
+
+                    <label><input type="radio" name="Population">Strong</label>
+
+                    <label><input type="radio" name="Population">Moderate</label>
+
+                    <label><input type="radio" name="Population">Weak<br></label>
+                    
+                    Crowded? <label><input type="radio" name="Crowded">Yes</label>
+
+                    <label><input type="radio" name="Crowded">No</label>
+                    
+                </div>
+
+                <div>
+
+                    <h4>Excesive Drone Cells</h4>
+
+                    <label><input type="radio" name="ExcesiveDrone">No</label>
+
+                    <label><input type="radio" name="ExcesiveDrone">Yes </label> <br>
+                    
+                    Comments:<input type="text" name="DroneComments">
+
+                </div>
+
+                <div>
+
+                    <h4>Queen Cells</h4>
+
+                    <label><input type="radio" name="QueenCells">No</label>
+
+                    <label><input type="radio" name="QueenCells">Yes:</label><br>    
+
+                    Along frame bottom (swarm cells):#<input type="number" name="SwarmCell#"><br>
+                    
+
+                    Converted worker cell (supraceedure or emergency cells):#<input type="number" name="SupraCell#">
+
+                </div>
+                
+                <div>
+
+                    <h4>Food Stores</h4>
+
+                    Honey:<label><input type="radio" name="HoneyStores">Plenty</label>
+                    
+                    <label><input type="radio" name="HoneyStores">Fine</label>
+                    
+                    <label><input type="radio" name="HoneyStores">Sparse</label><br>
+                    
+                    Pollen:<label><input type="radio" name="PollenStores">Plenty</label>
+                    
+                    <label><input type="radio" name="PollenStores">Fine</label>
+                    
+                    <label><input type="radio" name="PollenStores">Sparse</label>
+
+     
+
+                </div>
+                
+                <div>
+
+                    <h4>Hive Condition</h4>
+
+                    <label><input type="checkbox" name="HiveCdnNorm">Normal</label>
+
+                    <label><input type="checkbox" name="HiveCdnBraceComb">Brace Comb</label>
+
+                    <label><input type="checkbox" name="HiveCdnExProp">Excessive Propolis</label>
+
+                    <label><input type="checkbox" name="HiveCdnStink">Foul odor</label>
+
+                   <label><input type="checkbox" name="HiveCdnDamage">Equip. Damage</label> 
+
+                    <label><input type="checkbox" name="HiveCdnOther">Other:</label><input type="text" name="HiveCdnOtherText">
+
+                </div>
+
+                <div>
+
+                    <h4>Disease/Pests</h4>
+                    
+                    <h5>Verroa mites</h5>
+
+                    Mite Check:<input type="radio" name="MiteCheck">No
+
+                    <label><input type="radio" name="MiteCheck">Yes</label><br>
+                    
+                    <label><input type="radio" name="SamplingMethod">Sugar Roll</label>
+                    
+                    <label><input type="radio" name="SamplingMethod">Alcohol Wash<br></label>
+                    
+                    How many mites in the sample?<input type="number" name="MiteCount"> <br>
+                    
+                    <h5>Mite Treatment</h5>
+                    
+                     <label><input type="checkbox" name="MiteTreatOils">Essential Oils</label>
+                    
+                     <label><input type="checkbox" name="MiteTreatApivar">Apivar</label>
+                    
+                     <label><input type="checkbox" name="MiteTreatApistan">Apistan or Checkmate+</label>
+                    
+                     <label><input type="checkbox" name="MiteTreatFAcid">Formic Acid</label>
+                    
+                     <label><input type="checkbox" name="MiteTreatOxAcid">Oxalic Acid</label>
+                    
+                     <label><input type="checkbox" name="MiteTreatHops">Hop Guard</label>
+                    
+                     <label><input type="checkbox" name="MiteTreatOther">Other:</label><input type="text" name="MiteTreatOtherText"><br>
+                    
+                    When do treatments need to be tended/removed?:<input type="date" name="TreatRemoveDate">
+                    
+                    <h5>Other Problems/Treaments</h5>
+
+                    <label><input type="checkbox" name="OtherProbCB">Chalk Brood</label>
+
+                    <label><input type="checkbox" name="OtherProbNos">Nosema</label>
+
+                    <label><input type="checkbox" name="OtherProbEFB">E. Foulbrood</label>
+
+                    <label><input type="checkbox" name="OtherProbAFB">A. Foulbrood</label>
+
+                    <label><input type="checkbox" name="OtherProbBeetle">Hive Beetle</label>
+
+                    <label><input type="checkbox" name="OtherProbOther">Other:</label><input type="text" name="OtherProbOtherText"><br>
+                    
+                    Treatments:<input type="text" name="OtherProbTreat"><br>
+                    
+                    Comments:<input type="text" name="OtherProbComments">
+
+                </div>
+
+                
+
+                
+
+                <div>
+
+                    <h4>Actions Taken</h4>
+                    
+                    <label><input type="checkbox" name="ActionsNothing">Nothing</label>
+
+                    <label><input type="checkbox" name="ActionsFedSugar">Fed hive (syrup)</label>
+                    
+                    <label><input type="checkbox" name="ActionsFedPollen">Fed hive (pollen patty)</label>
+
+                    <label><input type="checkbox" name="ActionsExcluder">Added Excluder</label>
+
+                    <label><input type="checkbox" name="ActionsRequeen">Requeened</label> 
+
+                    <label><input type="checkbox" name="ActionsSwapBox">Swapped brood boxes</label>
+
+                    <label><input type="checkbox" name="ActionsRemoveComb">Removed Old Comb: </label>How many frames?<input type="number" name="ActionsRemoveCombNumber">
+
+                    <label><input type="checkbox" name="ActionsAddSupers">Added super(s)</label>
+
+                    <input type="checkbox" name="ActionsSplit">Split hive:
+
+                    New Hive #<input type="text" name="ActionsNewHive#">
+
+                    <input type="checkbox" name="ActionsOther">Other:<input type="text" name="ActionsOtherText">
+
+                </div>
+
+                <div>
+
+                    <h4>Recommendations:</h4>
+
+                    <input type="checkbox" name="RecAddSup">Add Supers
+                    
+                    <label><input type="checkbox" name="RecFedSugar">Feed hive (syrup)</label>
+                    
+                    <label><input type="checkbox" name="RecFedPollen">Feed hive (pollen patty)</label>
+
+                    <input type="checkbox" name="RecSplit">Split
+
+                    <input type="checkbox" name="RecReplaceQueeen">Replace Queen
+
+                    <input type="checkbox" name="RecSwarmWatch">Swarming Imminent - Needs Monitoring
+
+                    <input type="checkbox" name="RecReplaceEquip">Replace Equipment:<input type="text" name="RecReplaceEquipText">
+                    
+                    <input type="checkbox" name="RecOther"> Other:<input type="text" name="RecOtherText"> <br>
+                    
+                    Comments:<input type="text" name="RecComments">
+
+                </div>
+
+                <div>
+                
+                    General Comments:<input type="text" name="GenComments">
+                    
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>        
+
+</body>
+
