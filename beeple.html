@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<!-- Git testing -->
-<!-- This is a test edit -->
 <head>
     <title>Beeple</title>   
 </head>
@@ -16,9 +14,9 @@
                     <label>Who Worked Hive: <input type="text" name="Worker"></label>        
                     <label>Location: <input type="text" name="Loc"></label> <br>
                     <p>Hive Size:</p>
-                    <label>Deeps:<input type="number" name="#ofDeeps"></label>        
-                    <label>Mediums:<input type="number" name="#ofMediums"></label>                    
-                    <label>Shallows:<input type="number" name="#ofshallows"></label>
+                    <label>Deeps:<input type="number" name="NumOfDeeps"></label>        
+                    <label>Mediums:<input type="number" name="NumOfMediums"></label>                    
+                    <label>Shallows:<input type="number" name="NumOfshallows"></label>
                 </div>
 
                 <div>
@@ -29,7 +27,7 @@
                 </div>
 
                 <div>
-                    <h4>Saw Queen</h4>
+                    <h4>Saw Queen</h4> <!-- this is a good spot for a colapsable form -->
                     <label><input type="radio" name="QueenSeen">No</label>
                     <label><input type="radio" name="QueenSeen">Yes</label>
                     <p>Marked?</p>
@@ -70,7 +68,7 @@
                 </div>
 
                 <div>
-                    <h4>Queen Cells</h4>
+                    <h4>Queen Cells</h4><!-- this is a good spot for a colapsable form -->
                     <label><input type="radio" name="QueenCells">No</label>
                     <label><input type="radio" name="QueenCells">Yes:</label><br>    
                     <label>Along frame bottom (swarm cells):#<input type="number" name="SwarmCell#"></label><br>
@@ -99,14 +97,15 @@
 
                 <div>
                     <h4>Disease/Pests</h4>                    
-                    <h5>Verroa mites</h5>
+                    <h5>Verroa mites</h5><!-- this is a good spot for a colapsable form -->
                     <label>Mite Check:<input type="radio" name="MiteCheck">No</label>
                     <label><input type="radio" name="MiteCheck">Yes</label><br>                    
                     <label><input type="radio" name="SamplingMethod">Sugar Roll</label>                    
                     <label><input type="radio" name="SamplingMethod">Alcohol Wash<br></label>                    
                     <label>How many mites in the sample?<input type="number" name="MiteCount"></label><br>                    
                     
-                    <h5>Mite Treatment</h5>                   
+                    <label>Mite Treatment:<input type="radio" name="MiteTreat">No</label><!-- this is a good spot for a colapsable form -->
+                    <label><input type="radio" name="MiteTreat">Yes</label><br>
                     <label><input type="checkbox" name="MiteTreatOils">Essential Oils</label>                    
                     <label><input type="checkbox" name="MiteTreatApivar">Apivar</label>                    
                     <label><input type="checkbox" name="MiteTreatApistan">Apistan or Checkmate+</label>                    
