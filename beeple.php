@@ -7,49 +7,9 @@ $form_action = 'submit_form';
 $nonce = create_nonce($form_action, $timestamp);
 
 if ( ! empty( $_POST ) ) {echo('line 9 '); print_r($_POST); 
-    $insert = process($_POST);
-    
-/*
-
-    // Extract $_POST data
-    extract($_POST);
-    
-    //Check nonce
-    $calc_str = sprintf('%s_%s_%s_', $form_action, $timestamp, NONCE_SALT);
-    $calc_hash = hash('sha512', $calc_str);
-    
-    if ($calc_hash == $form_hash) {
-        //add sanitization/validation here.
-        $filter_HiveID = filter_var($HiveID, FILTER_SANITIZE_STRING);
-        $filter_Date = filter_var($Date, FILTER_SANITIZE_STRING);
-        $filter_Worker = filter_var($Worker, FILTER_SANITIZE_STRING);
-        $filter_Loc = filter_var($Loc, FILTER_SANITIZE_STRING);
-        $filter_NumOfDeeps = filter_var($NumOfDeeps, FILTER_SANITIZE_NUMBER_INT);
-        $filter_NumOfMediums = filter_var($NumOfMediums, FILTER_SANITIZE_NUMBER_INT);
-        $filter_NumOfShallows = filter_var($NumOfShallows, FILTER_SANITIZE_NUMBER_INT);
-        $filter_Temperament = filter_var($Temperament, FILTER_SANITIZE_STRING);
-        //connect and escape.
-        $mysql = new mysqli( DB_HOST, DB_USER, DB_PASS, DB_NAME);
-        $stmt = $mysql->prepare("INSERT INTO beeple_table (HiveID,Date,Worker,Loc,NumOfDeeps,NumOfMediums,NumOfShallows,Temperament) VALUES (?,?,?,?,?,?,?,?)");
-        $stmt->bind_param("ssssiiis", $filter_HiveID, $filter_Date, $filter_Worker, $filter_Loc, $filter_NumOfDeeps, $filter_NumOfMediums, $filter_NumOfShallows, $filter_Temperament);
-        $insert = $stmt->execute();
-        
-        //Close connections
-        $stmt->close();
-        $mysql->close();
-    } else {
-        $insert = false;
-    }
-        
-*/       
+    $insert = process($_POST);      
 }
 ?>
-
-
-
-
-
-
 
 <!DOCTYPE html>
 <head>
@@ -82,17 +42,17 @@ if ( ! empty( $_POST ) ) {echo('line 9 '); print_r($_POST);
                 </div>
                 <div>
                     <h4>Hive Temperament</h4>
-                    <label><input type="radio" name="Temperament" value="Calm">Calm</label>
-                    <label><input type="radio" name="Temperament" value="Nervous">Nervous</label>
+                    <label><input type="radio" name="Temperament" value="Calm" checked>Calm</label>
+                    <label><input type="radio" name="Temperament" value="Nervous" >Nervous</label>
                     <label><input type="radio" name="Temperament" value="Aggressive">Aggressive</label>
                 </div>
 
                 <div>
                     <h4>Saw Queen</h4> <!-- this is a good spot for a colapsable form -->
-                    <label><input type="radio" name="QueenSeen" value="No">No</label>
+                    <label><input type="radio" name="QueenSeen" value="No" checked>No</label>
                     <label><input type="radio" name="QueenSeen" value="Yes">Yes</label>
                     <p>Marked?</p>
-                    <label><input type="radio" name="QueenMarked" value="No">No</label>
+                    <label><input type="radio" name="QueenMarked" value="No" checked>No</label>
                     <label><input type="radio" name="QueenMarked" value="Yes">Yes</label>
                     <label>Color:<input type="text" name="QueenColor"></label>                    
                     <label>Rough Age of Queen: <input type="number" name="QueenAge">Years</label>
@@ -102,35 +62,36 @@ if ( ! empty( $_POST ) ) {echo('line 9 '); print_r($_POST);
                     <h4>Laying Pattern</h4>
                     <label><input type="radio" name="LayingPattern" value="Beaut">Beautiful (Solid &amp; Uniform)</label>
                     <label><input type="radio" name="LayingPattern" value="Medio">Mediocre (Little spotty)</label>
-                    <label><input type="radio" name="LayingPattern" value="Poor">Poor (Spotty)</label>        
+                    <label><input type="radio" name="LayingPattern" value="Poor">Poor (Spotty)</label>  
+                    <label><input type="radio" name="LayingPattern" value="NA" checked>NA</label>
                 </div>
 
                 <div>
                     <h4>Eggs Seen</h4>
                     <label><input type="radio" name="EggsSeen" value="Yes">Yes</label>
-                    <label><input type="radio" name="EggsSeen" value="No">No</label><br>
+                    <label><input type="radio" name="EggsSeen" value="No" checked>No</label><br>
                     <label>Comments:<input type="text" name="EggComments"></label>
                 </div>
 
                 <div>
                     <h4>Population</h4>
                     <label><input type="radio" name="Population" value="Stro">Strong</label>
-                    <label><input type="radio" name="Population" value="Mod">Moderate</label>
+                    <label><input type="radio" name="Population" value="Mod" checked>Moderate</label>
                     <label><input type="radio" name="Population" value="Weak">Weak<br></label>                    
                     <label>Crowded?<input type="radio" name="Crowded" value="Yes">Yes</label>
-                    <label><input type="radio" name="Crowded" value="No">No</label>                    
+                    <label><input type="radio" name="Crowded" value="No" checked>No</label>                    
                 </div>
 
                 <div>
                     <h4>Excesive Drone Cells</h4>
-                    <label><input type="radio" name="ExcesiveDrone" value="No">No</label>
+                    <label><input type="radio" name="ExcesiveDrone" value="No" checked>No</label>
                     <label><input type="radio" name="ExcesiveDrone" value="Yes">Yes </label><br>                    
                     <label>Comments:<input type="text" name="DroneComments"></label>
                 </div>
 
                 <div>
                     <h4>Queen Cells</h4><!-- this is a good spot for a colapsable form -->
-                    <label><input type="radio" name="QueenCells" value="No">No</label>
+                    <label><input type="radio" name="QueenCells" value="No" checked>No</label>
                     <label><input type="radio" name="QueenCells" value="Yes">Yes:</label><br>    
                     <label>Along frame bottom (swarm cells):#<input type="number" name="SwarmCellNum"></label><br>
                     <label>Converted worker cell (supraceedure or emergency cells):#<input type="number" name="SupraCellNum"></label>
@@ -139,10 +100,10 @@ if ( ! empty( $_POST ) ) {echo('line 9 '); print_r($_POST);
                 <div>
                     <h4>Food Stores</h4>
                     <label>Honey:<input type="radio" name="HoneyStores" value="Plenty">Plenty</label>                    
-                    <label><input type="radio" name="HoneyStores" value="Fine">Fine</label>                    
+                    <label><input type="radio" name="HoneyStores" value="Fine" checked>Fine</label>                    
                     <label><input type="radio" name="HoneyStores" value="Sparse">Sparse</label><br>                    
                     <label>Pollen:<input type="radio" name="PollenStores" value="Plenty">Plenty</label>                    
-                    <label><input type="radio" name="PollenStores" value="Fine">Fine</label>                    
+                    <label><input type="radio" name="PollenStores" value="Fine" checked>Fine</label>                    
                     <label><input type="radio" name="PollenStores" value="Sparse">Sparse</label>
                 </div>
                 
@@ -159,13 +120,17 @@ if ( ! empty( $_POST ) ) {echo('line 9 '); print_r($_POST);
                 <div>
                     <h4>Disease/Pests</h4>                    
                     <h5>Verroa mites</h5><!-- this is a good spot for a colapsable form -->
-                    <label>Mite Check:<input type="radio" name="MiteCheck" value="No">No</label>
+                    <label>Mite Check:<input type="radio" name="MiteCheck" value="No" checked>No</label>
                     <label><input type="radio" name="MiteCheck" value="Yes">Yes</label><br>                    
-                    <label><input type="radio" name="SamplingMethod" value="Sugar">Sugar Roll</label>                    
-                    <label><input type="radio" name="SamplingMethod" value="Alcohol">Alcohol Wash<br></label>                    
-                    <label>How many mites in the sample?<input type="number" name="MiteCount"></label><br>                    
+                    <label><input type="radio" name="SamplingMethod" value="Sugar" checked>Sugar Roll</label>                    
+                    <label><input type="radio" name="SamplingMethod" value="Alcohol">Alcohol Wash</label>
+                    <label><input type="radio" name="SamplingMethod" value="NA" checked>NA<br></label>
+                    <label>How many mites in the sample?<input type="number" name="MiteCount"></label><br> 
+                    
                     <!-- We might have to re-do checkboxes -->
-                    <label>Mite Treatment:<input type="radio" name="MiteTreat" value="No">No</label><!-- this is a good spot for a colapsable form -->
+                    <!-- Do we REALLY want mite treatment as checkboxes? Noone does more then one treatment at a time. Maybe they would be better as radio buttons -->
+                    
+                    <label>Mite Treatment:<input type="radio" name="MiteTreat" value="No" checked>No</label><!-- this is a good spot for a colapsable form -->
                     <label><input type="radio" name="MiteTreat" value="Yes">Yes</label><br>
                     <label><input type="checkbox" name="MiteTreatType" value="MiteTreatOils">Essential Oils</label>                    
                     <label><input type="checkbox" name="MiteTreatType" value="MiteTreatApivar">Apivar</label>                    
