@@ -13,7 +13,23 @@ if ( ! empty( $_POST ) ) {echo('line 9 '); print_r($_POST);
 
 <!DOCTYPE html>
 <head>
-    <title>Beeple</title>   
+    <title>Beeple</title> 
+    <link rel="stylesheet" type="text/css" href="style.css"> 
+    
+      <meta charset="utf-8">
+  <title>Your page title here :)</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+    
 </head>
 
 <body>
@@ -32,7 +48,7 @@ if ( ! empty( $_POST ) ) {echo('line 9 '); print_r($_POST);
 
                 <div>
                     <label>Hive ID: <input type="text" name="HiveID"></label>
-                    <label>Date: <input type="date" name="Date"></label>
+                    <label>Date: <input type="date" name="Date"></label> <!-- Date input not supported in all browsers, conside using a polyphill. Also look up what 'polyfill' means-->
                     <label>Who Worked Hive: <input type="text" name="Worker"></label>        
                     <label>Location: <input type="text" name="Loc"></label> <br>
                     <p>Hive Size:</p>
@@ -67,9 +83,9 @@ if ( ! empty( $_POST ) ) {echo('line 9 '); print_r($_POST);
                 </div>
 
                 <div>
-                    <h4>Eggs Seen</h4>
-                    <label><input type="radio" name="EggsSeen" value="Yes">Yes</label>
-                    <label><input type="radio" name="EggsSeen" value="No" checked>No</label><br>
+                    <h4>Eggs Seen</h4>                    
+                    <label><input type="radio" name="EggsSeen" value="No" checked>No</label>
+                    <label><input type="radio" name="EggsSeen" value="Yes">Yes</label><br>
                     <label>Comments:<input type="text" name="EggComments"></label>
                 </div>
 
@@ -132,14 +148,16 @@ if ( ! empty( $_POST ) ) {echo('line 9 '); print_r($_POST);
                     
                     <label>Mite Treatment:<input type="radio" name="MiteTreat" value="No" checked>No</label><!-- this is a good spot for a colapsable form -->
                     <label><input type="radio" name="MiteTreat" value="Yes">Yes</label><br>
-                    <label><input type="checkbox" name="MiteTreatType" value="MiteTreatOils">Essential Oils</label>                    
-                    <label><input type="checkbox" name="MiteTreatType" value="MiteTreatApivar">Apivar</label>                    
-                    <label><input type="checkbox" name="MiteTreatType" value="MiteTreatApistan">Apistan or Checkmate+</label>                    
-                    <label><input type="checkbox" name="MiteTreatType" value="MiteTreatFAcid">Formic Acid</label>                    
-                    <label><input type="checkbox" name="MiteTreatType" value="MiteTreatOxAcid">Oxalic Acid</label>                    
-                    <label><input type="checkbox" name="MiteTreatType" value="MiteTreatHops">Hop Guard</label>                    
-                    <label><input type="checkbox" name="MiteTreatType" value="MiteTreatOther">Other:<input type="text" name="MiteTreatOtherText"></label><br>                    
+                    <label><input type="checkbox" name="MiteTreatType" value="MiteTreatOils">Essential Oils</label>     
+                    <label><input type="checkbox" name="MiteTreatType" value="MiteTreatApivar">Apivar</label>
+                    <label><input type="checkbox" name="MiteTreatType" value="MiteTreatApistan">Apistan or Checkmate+</label>
+                    <label><input type="checkbox" name="MiteTreatType" value="MiteTreatFAcid">Formic Acid</label>
+                    <label><input type="checkbox" name="MiteTreatType" value="MiteTreatOxAcid">Oxalic Acid</label>
+                    <label><input type="checkbox" name="MiteTreatType" value="MiteTreatHops">Hop Guard</label>
+                    <label><input type="checkbox" name="MiteTreatType" value="MiteTreatOther">Other:</label>
+                    <input type="text" name="MiteTreatOtherText"><br>                    
                     <label>When do treatments need to be tended/removed?:<input type="date" name="TreatRemoveDate"></label>                    
+                    
                     <!-- We might have to re-do checkboxes -->
                     <h5>Other Problems/Treaments</h5>
                     <label><input type="checkbox" name="OtherProb" value="OtherProbCB">Chalk Brood</label>
@@ -147,7 +165,8 @@ if ( ! empty( $_POST ) ) {echo('line 9 '); print_r($_POST);
                     <label><input type="checkbox" name="OtherProb" value="OtherProbEFB">E. Foulbrood</label>
                     <label><input type="checkbox" name="OtherProb" value="OtherProbAFB">A. Foulbrood</label>
                     <label><input type="checkbox" name="OtherProb" value="OtherProbBeetle">Hive Beetle</label>
-                    <label><input type="checkbox" name="OtherProb" value="OtherProbOther">Other:<input type="text" name="OtherProbOtherText"></label><br>                   
+                    <label><input type="checkbox" name="OtherProb" value="OtherProbOther">Other:</label>
+                    <input type="text" name="OtherProbOtherText"><br>                   
                     <label>Treatments:<input type="text" name="OtherProbTreat"></label><br>                    
                     <label>Comments:<input type="text" name="OtherProbComments"></label>
                 </div>           
@@ -155,7 +174,7 @@ if ( ! empty( $_POST ) ) {echo('line 9 '); print_r($_POST);
                 <div>
                     <h4>Actions Taken</h4>                    
                     <label><input type="checkbox" name="Actions" value="ActionsNothing">Nothing</label>
-                    <label><input type="checkbox" name="Actions" value="ActionsFedSugar">Fed hive (suryp)</label>                    
+                    <label><input type="checkbox" name="Actions" value="ActionsFedSugar">Fed hive (suryp)</label>
                     <label><input type="checkbox" name="Actions" value="ActionsFedPollen">Fed hive (pollen patty)</label>
                     <label><input type="checkbox" name="Actions" value="ActionsExcluder">Added Excluder</label>
                     <label><input type="checkbox" name="Actions" value="ActionsRequeen">Requeened</label>
@@ -165,7 +184,8 @@ if ( ! empty( $_POST ) ) {echo('line 9 '); print_r($_POST);
                     <label><input type="checkbox" name="Actions" value="ActionsAddSupers">Added super(s)</label>
                     <label><input type="checkbox" name="Actions" value="ActionsSplit">Split hive:</label>
                     <label>New Hive #<input type="text" name="ActionsNewHiveNum"></label>
-                    <label><input type="checkbox" name="Actions" value="ActionsOther">Other:<input type="text" name="ActionsOtherText"></label>
+                    <label><input type="checkbox" name="Actions" value="ActionsOther">Other:</label>
+                    <input type="text" name="ActionsOtherText">
                 </div>
                     <!-- We might have to re-do checkboxes -->
                 <div>
@@ -174,8 +194,10 @@ if ( ! empty( $_POST ) ) {echo('line 9 '); print_r($_POST);
                     <label><input type="checkbox" name="Rec" value="RecSplit">Split</label>
                     <label><input type="checkbox" name="Rec" value="RecReplaceQueeen">Replace Queen</label>
                     <label><input type="checkbox" name="Rec" value="RecSwarmWatch">Swarming Imminent - Needs Monitoring</label>
-                    <label><input type="checkbox" name="Rec" value="RecReplaceEquip">Replace Equipment:<input type="text" name="RecReplaceEquipText"></label>                    
-                    <label><input type="checkbox" name="Rec" value="RecOther"> Other:<input type="text" name="RecOtherText"></label> <br>                    
+                    <label><input type="checkbox" name="Rec" value="RecReplaceEquip">Replace Equipment:</label>
+                    <input type="text" name="RecReplaceEquipText">
+                    <label><input type="checkbox" name="Rec" value="RecOther">Other:</label>
+                    <input type="text" name="RecOtherText"><br>
                     <label>Comments:<input type="text" name="RecComments"></label>
                 </div>
 
