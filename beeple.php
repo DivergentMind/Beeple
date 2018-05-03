@@ -33,7 +33,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
         <div>
             <h1>Hive Inspection Sheet</h1>
             <div>
-            <form action="" method="post">
+                <form action="" method="post">
                     <input type="hidden" name="timestamp" value="<?php echo $timestamp; ?>">
                     <input type="hidden" name="form_action" value="<?php echo $form_action; ?>">
                     <input type="hidden" name="nonce" value="<?php echo $nonce; ?>">
@@ -73,7 +73,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="radio" name="LayingPattern" value="Beaut">Beautiful (Solid &amp; Uniform)</label>
                     <label><input type="radio" name="LayingPattern" value="Medio">Mediocre (Little spotty)</label>
                     <label><input type="radio" name="LayingPattern" value="Poor">Poor (Spotty)</label>  
-                    <label><input type="radio" name="LayingPattern" value="NA" checked>NA</label>
+                    <label><input type="radio" name="LayingPattern" value="NA" checked>NA</label><!--Hide-->
                 </div>
 
                 <div>
@@ -111,7 +111,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                 <div>
                     <h4>Food Stores</h4>
                     <label>Honey:<input type="radio" name="HoneyStores" value="Plenty">Plenty</label>                    
-                    <label><input type="radio" name="HoneyStores" value="Fine" checked>Fine</label>                    
+                    <label><input type="radio" name="HoneyStores" value="Fine">Fine</label>                    
                     <label><input type="radio" name="HoneyStores" value="Sparse">Sparse</label>
                     <label><input type="radio" name="HoneyStores" value="NA" checked>N/A</label><br><!--Hide-->
                     <label>Pollen:<input type="radio" name="PollenStores" value="Plenty">Plenty</label>                    
@@ -143,7 +143,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     
                     <label>Mite Treatment:<input type="radio" name="MiteTreat" value="No" checked>No</label><!-- this is a good spot for a colapsable form -->
                     <label><input type="radio" name="MiteTreat" value="Yes">Yes</label><br>
-                    <label><input type="radio" name="MiteTreatType" value="NA" checked>NA</label> 
+                    <label><input type="radio" name="MiteTreatType" value="NA" checked>N/A</label><!--hide--> 
                     <label><input type="radio" name="MiteTreatType" value="MiteTreatOils">Essential Oils</label>                    
                     <label><input type="radio" name="MiteTreatType" value="MiteTreatApivar">Apivar</label>                    
                     <label><input type="radio" name="MiteTreatType" value="MiteTreatApistan">Apistan or Checkmate+</label>                    
