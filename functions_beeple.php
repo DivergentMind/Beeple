@@ -91,8 +91,12 @@ if ( ! function_exists( 'process' ) ) {
             'OtherProbOtherText' => 'FILTER_SANITIZE_STRING',
             'OtherProbTreat' => 'FILTER_SANITIZE_STRING',
             'OtherProbComments' => 'FILTER_SANITIZE_STRING',
+            'Dead' => 'FILTER_SANITIZE_STRING',
+            'DeadComments' => 'FILTER_SANITIZE_STRING',
             'ActionsRemoveCombNumber' => 'FILTER_SANITIZE_NUMBER_INT',
+            'ActionsHoneyHarvNumber' => 'FILTER_SANITIZE_FLOAT',
             'ActionsNewHiveNum' => 'FILTER_SANITIZE_STRING',
+            'ActionsMergedHiveNum' => 'FILTER_SANITIZE_STRING',
             'ActionsOtherText' => 'FILTER_SANITIZE_STRING',
             'RecReplaceEquipText' => 'FILTER_SANITIZE_STRING',
             'RecOtherText' => 'FILTER_SANITIZE_STRING',
@@ -147,13 +151,13 @@ if ( ! function_exists( 'process' ) ) {
         mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
         
         $stmt = $mysql->prepare("
-            INSERT INTO beeple_table (HiveID,Date,Worker,Loc,NumOfDeeps,NumOfMediums,NumOfShallows,Temperament,QueenSeen,QueenMarked,QueenColor,QueenAge,LayingPattern,EggsSeen,EggComments,Population,Crowded,ExcesiveDrone,DroneComments,QueenCells,SwarmCellNum,SupraCellNum,HoneyStores,PollenStores,HiveCdns,HiveCdnOtherText,MiteCheck,SamplingMethod,MiteCount,MiteTreat,MiteTreatType,MiteTreatOtherText,TreatRemoveDate,OtherProbs,OtherProbOtherText,OtherProbTreat,OtherProbComments,Actions,ActionsRemoveCombNumber,ActionsNewHiveNum,ActionsOtherText,Recs,RecReplaceEquipText,RecOtherText,RecComments,GenComments) 
-            VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+            INSERT INTO beeple_table (HiveID,Date,Worker,Loc,NumOfDeeps,NumOfMediums,NumOfShallows,Temperament,QueenSeen,QueenMarked,QueenColor,QueenAge,LayingPattern,EggsSeen,EggComments,Population,Crowded,ExcesiveDrone,DroneComments,QueenCells,SwarmCellNum,SupraCellNum,HoneyStores,PollenStores,HiveCdns,HiveCdnOtherText,MiteCheck,SamplingMethod,MiteCount,MiteTreat,MiteTreatType,MiteTreatOtherText,TreatRemoveDate,OtherProbs,OtherProbOtherText,OtherProbTreat,OtherProbComments,Dead,DeadComments,Actions,ActionsRemoveCombNumber,ActionsHoneyHarvNumber,ActionsNewHiveNum,ActionsMergedHiveNum,ActionsOtherText,Recs,RecReplaceEquipText,RecOtherText,RecComments,GenComments) 
+            VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
         ");
         
-        $stmt->bind_param("ssssiiissssissssssssiissssssisssssssssisssssss", 
+        $stmt->bind_param("ssssiiissssissssssssiissssssisssssssssssidssssssss", 
             $filter_post['HiveID'], $filter_post['Date'], $filter_post['Worker'], 
-            $filter_post['Loc'], $filter_post['NumOfDeeps'], $filter_post['NumOfMediums'], $filter_post['NumOfShallows'], $filter_post['Temperament'], $filter_post['QueenSeen'], $filter_post['QueenMarked'], $filter_post['QueenColor'], $filter_post['QueenAge'], $filter_post['LayingPattern'], $filter_post['EggsSeen'], $filter_post['EggComments'], $filter_post['Population'], $filter_post['Crowded'], $filter_post['ExcesiveDrone'], $filter_post['DroneComments'], $filter_post['QueenCells'], $filter_post['SwarmCellNum'], $filter_post['SupraCellNum'], $filter_post['HoneyStores'], $filter_post['PollenStores'], $filter_HiveCdns, $filter_post['HiveCdnOtherText'], $filter_post['MiteCheck'], $filter_post['SamplingMethod'], $filter_post['MiteCount'], $filter_post['MiteTreat'], $filter_post['MiteTreatType'], $filter_post['MiteTreatOtherText'], $filter_post['TreatRemoveDate'], $filter_OtherProbs, $filter_post['OtherProbOtherText'], $filter_post['OtherProbTreat'], $filter_post['OtherProbComments'], $filter_Actions, $filter_post['ActionsRemoveCombNumber'], $filter_post['ActionsNewHiveNum'], $filter_post['ActionsOtherText'],$filter_Recs, $filter_post['RecReplaceEquipText'], $filter_post['RecOtherText'], $filter_post['RecComments'], $filter_post['GenComments']
+            $filter_post['Loc'], $filter_post['NumOfDeeps'], $filter_post['NumOfMediums'], $filter_post['NumOfShallows'], $filter_post['Temperament'], $filter_post['QueenSeen'], $filter_post['QueenMarked'], $filter_post['QueenColor'], $filter_post['QueenAge'], $filter_post['LayingPattern'], $filter_post['EggsSeen'], $filter_post['EggComments'], $filter_post['Population'], $filter_post['Crowded'], $filter_post['ExcesiveDrone'], $filter_post['DroneComments'], $filter_post['QueenCells'], $filter_post['SwarmCellNum'], $filter_post['SupraCellNum'], $filter_post['HoneyStores'], $filter_post['PollenStores'], $filter_HiveCdns, $filter_post['HiveCdnOtherText'], $filter_post['MiteCheck'], $filter_post['SamplingMethod'], $filter_post['MiteCount'], $filter_post['MiteTreat'], $filter_post['MiteTreatType'], $filter_post['MiteTreatOtherText'], $filter_post['TreatRemoveDate'], $filter_OtherProbs, $filter_post['OtherProbOtherText'], $filter_post['OtherProbTreat'], $filter_post['OtherProbComments'], $filter_post['Dead'], $filter_post['DeadComments'], $filter_Actions, $filter_post['ActionsRemoveCombNumber'], $filter_post['ActionsHoneyHarvNumber'], $filter_post['ActionsNewHiveNum'], $filter_post['ActionsMergedHiveNum'], $filter_post['ActionsOtherText'],$filter_Recs, $filter_post['RecReplaceEquipText'], $filter_post['RecOtherText'], $filter_post['RecComments'], $filter_post['GenComments']
         );
         
         $insert = $stmt->execute();

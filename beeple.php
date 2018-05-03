@@ -149,6 +149,10 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="checkbox" name="OtherProbs[Other]" value="1">Other:<input type="text" name="OtherProbOtherText"></label><br>                   
                     <label>Treatments:<input type="text" name="OtherProbTreat"></label><br>                    
                     <label>Comments:<input type="text" name="OtherProbComments"></label>
+                    
+                    <h5>Dead Hive</h5><!-- this is a good spot for a colapsable form -->
+                    <label><input type="radio" name="Dead" value="No" checked>No</label>
+                    <label><input type="radio" name="Dead" value="Yes">Yes</label><br>   <label>Suspected Cause:<input type="text" name="DeadComments"></label>                
                 </div>           
                     
                 <div>
@@ -161,9 +165,13 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="checkbox" name="Actions[SwapBox]" value="1">Swapped brood boxes</label>
                     <label><input type="checkbox" name="Actions[RemoveComb]" value="1">Removed Old Comb:</label>
                     <label>How many frames?<input type="number" name="ActionsRemoveCombNumber"></label>
+                    <label><input type="checkbox" name="Actions[HoneyHarvest]" value="1">Honey Harvested:</label>
+                    <label>How many LBS?<input type="number" step="0.01" min="0" name="ActionsHoneyHarvNumber"></label>
                     <label><input type="checkbox" name="Actions[AddSuppers]" value="1">Added super(s)</label>
                     <label><input type="checkbox" name="Actions[Split]" value="1">Split hive:</label>
                     <label>New Hive #<input type="text" name="ActionsNewHiveNum"></label>
+                     <label><input type="checkbox" name="Actions[Merge]" value="1">Merge hive:</label>
+                    <label>Merged Hive #<input type="text" name="ActionsMergedHiveNum"></label>
                     <label><input type="checkbox" name="Actions[Other]" value="1">Other:<input type="text" name="ActionsOtherText"></label>
                 </div>
                     
