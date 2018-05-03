@@ -54,7 +54,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="radio" name="Temperament" value="Calm" checked>Calm</label>
                     <label><input type="radio" name="Temperament" value="Nervous" >Nervous</label>
                     <label><input type="radio" name="Temperament" value="Aggressive">Aggressive</label>
-                    <input type="hidden" name="Temperament" value="NA" checked>
+                    <input type="hidden" name="Temperament" value="NA" checked><!--Hide-->
                 </div>
 
                 <div>
