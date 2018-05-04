@@ -169,10 +169,9 @@ if ( ! function_exists( 'process' ) ) {
         return $insert;
     }
 }
-/* I don't know what this is...
+
 if ( ! function_exists( '_e' ) ) {
     function _e($string) {
         echo htmlentities($string, ENT_QUOTES | ENT_HTML5, 'UTF-8');
     }
 }
-*/

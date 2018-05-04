@@ -143,7 +143,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     
                     <label>Mite Treatment:<input type="radio" name="MiteTreat" value="No" checked>No</label><!-- this is a good spot for a colapsable form -->
                     <label><input type="radio" name="MiteTreat" value="Yes">Yes</label><br>
-                    <label><input type="radio" name="MiteTreatType" value="NA" checked>N/A</label><!--hide--> 
+                    <label><input type="radio" name="MiteTreatType" value="NA" checked>N/A</label><!--Hide--> 
                     <label><input type="radio" name="MiteTreatType" value="MiteTreatOils">Essential Oils</label>                    
                     <label><input type="radio" name="MiteTreatType" value="MiteTreatApivar">Apivar</label>                    
                     <label><input type="radio" name="MiteTreatType" value="MiteTreatApistan">Apistan or Checkmate+</label>                    
@@ -172,19 +172,19 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                 <div>
                     <h4>Actions Taken</h4>                    
                     <label><input type="checkbox" name="Actions[Nothing]" value="1">Nothing</label>
-                    <label><input type="checkbox" name="Actions[FedSugar]" value="1">Fed hive (suryp)</label>                    
-                    <label><input type="checkbox" name="Actions[FedPollen]" value="1">Fed hive (pollen patty)</label>
+                    <label><input type="checkbox" name="Actions[FedSugar]" value="1">Fed Hive (Suryp)</label>                    
+                    <label><input type="checkbox" name="Actions[FedPollen]" value="1">Fed Hive (Pollen Patty)</label>
                     <label><input type="checkbox" name="Actions[Excluder]" value="1">Added Excluder</label>
                     <label><input type="checkbox" name="Actions[Requeen]" value="1">Requeened</label>
-                    <label><input type="checkbox" name="Actions[SwapBox]" value="1">Swapped brood boxes</label>
+                    <label><input type="checkbox" name="Actions[SwapBox]" value="1">Swapped Brood Boxes</label>
                     <label><input type="checkbox" name="Actions[RemoveComb]" value="1">Removed Old Comb:</label>
                     <label>How many frames?<input type="number" name="ActionsRemoveCombNumber"></label>
                     <label><input type="checkbox" name="Actions[HoneyHarvest]" value="1">Honey Harvested:</label>
-                    <label>How many LBS?<input type="number" step="0.01" min="0" name="ActionsHoneyHarvNumber"></label>
+                    <label>How many Pounds?<input type="number" step="0.01" min="0" name="ActionsHoneyHarvNumber"></label>
                     <label><input type="checkbox" name="Actions[AddSuppers]" value="1">Added super(s)</label>
-                    <label><input type="checkbox" name="Actions[Split]" value="1">Split hive:</label>
+                    <label><input type="checkbox" name="Actions[Split]" value="1">Split Hive:</label>
                     <label>New Hive #<input type="text" name="ActionsNewHiveNum"></label>
-                    <label><input type="checkbox" name="Actions[Merge]" value="1">Merge hive:</label>
+                    <label><input type="checkbox" name="Actions[Merge]" value="1">Merged Hive:</label>
                     <label>Merged Hive #<input type="text" name="ActionsMergedHiveNum"></label>
                     <label><input type="checkbox" name="Actions[Other]" value="1">Other:</label><input type="text" name="ActionsOtherText">
                 </div>
