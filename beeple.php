@@ -61,6 +61,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="radio" name="Temperament" value="Calm" checked>Calm</label>
                     <label><input type="radio" name="Temperament" value="Nervous" >Nervous</label>
                     <label><input type="radio" name="Temperament" value="Aggressive">Aggressive</label>
+                    <label><input type="radio" name="Temperament" value="NA">NA</label><!--Hide-->
                 </div>
 
                 <div>
@@ -93,7 +94,8 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <h4>Population</h4>
                     <label><input type="radio" name="Population" value="Stro">Strong</label>
                     <label><input type="radio" name="Population" value="Mod" checked>Moderate</label>
-                    <label><input type="radio" name="Population" value="Weak">Weak<br></label>                    
+                    <label><input type="radio" name="Population" value="Weak">Weak<br></label>
+                    <label><input type="radio" name="Population" value="NA">NA<br></label><!--Hide-->
                     <label>Crowded?<input type="radio" name="Crowded" value="Yes">Yes</label>
                     <label><input type="radio" name="Crowded" value="No" checked>No</label>                    
                 </div>
@@ -117,10 +119,12 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <h4>Food Stores</h4>
                     <label>Honey:<input type="radio" name="HoneyStores" value="Plenty">Plenty</label>                    
                     <label><input type="radio" name="HoneyStores" value="Fine" checked>Fine</label>                    
-                    <label><input type="radio" name="HoneyStores" value="Sparse">Sparse</label><br>                    
+                    <label><input type="radio" name="HoneyStores" value="Sparse">Sparse</label><br> 
+                    <label><input type="radio" name="HoneyStores" value="NA">NA</label><br> <!--Hide-->
                     <label>Pollen:<input type="radio" name="PollenStores" value="Plenty">Plenty</label>                    
                     <label><input type="radio" name="PollenStores" value="Fine" checked>Fine</label>                    
                     <label><input type="radio" name="PollenStores" value="Sparse">Sparse</label>
+                    <label><input type="radio" name="PollenStores" value="NA">NA</label> <!--Hide-->
                 </div>
                 
                 <div>
@@ -146,7 +150,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     
                     <label>Mite Treatment:<input type="radio" name="MiteTreat" value="No" checked>No</label><!-- this is a good spot for a colapsable form -->
                     <label><input type="radio" name="MiteTreat" value="Yes">Yes</label><br>
-                    <label><input type="radio" name="MiteTreatType" value="NA" checked>NA</label> 
+                    <label><input type="radio" name="MiteTreatType" value="NA" checked>NA</label><!-- Hide -->
                     <label><input type="radio" name="MiteTreatType" value="MiteTreatOils">Essential Oils</label>                    
                     <label><input type="radio" name="MiteTreatType" value="MiteTreatApivar">Apivar</label>                    
                     <label><input type="radio" name="MiteTreatType" value="MiteTreatApistan">Apistan or Checkmate+</label>                    
