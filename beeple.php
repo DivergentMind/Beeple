@@ -65,7 +65,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="radio" name="QueenMarked" value="No" checked>No</label>
                     <label><input type="radio" name="QueenMarked" value="Yes">Yes</label>
                     <label>Color:<input type="text" name="QueenColor"></label>                    
-                    <label>Rough Age of Queen: <input type="number" name="QueenAge">Years</label>
+                    <label>Rough Age of Queen: <input type="number" step="0.1" name="QueenAge">Years</label>
                 </div>
 
                 <div>
@@ -196,7 +196,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="checkbox" name="Recs[ReplaceQueen]" value="RecReplaceQueeen">Replace Queen</label>
                     <label><input type="checkbox" name="Recs[SwarmWatch]" value="RecSwarmWatch">Swarming Imminent - Needs Monitoring</label>
                     <label><input type="checkbox" name="Recs[ReplaceEquip]" value="RecReplaceEquip">Replace Equipment:<input type="text" name="RecReplaceEquipText"></label>                    
-                    <label><input type="checkbox" name="Recs[Other]" value="RecOther"> Other:</label><input type="text" name="RecOtherText"><br>                    
+                    <label><input type="checkbox" name="Recs[Other]" value="RecOther">Other:</label><input type="text" name="RecOtherText"><br>                    
                     <label>Comments:<input type="text" name="RecComments"></label>
                 </div>
 
