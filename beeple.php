@@ -54,7 +54,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="radio" name="Temperament" value="Calm" checked>Calm</label>
                     <label><input type="radio" name="Temperament" value="Nervous" >Nervous</label>
                     <label><input type="radio" name="Temperament" value="Aggressive">Aggressive</label>
-                    <input type="hidden" name="Temperament" value="NA" checked><!--Hide-->
+                    <label><input type="radio" name="Temperament" value="NA">N/A</label><!--Hide-->
                 </div>
 
                 <div>
@@ -73,7 +73,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="radio" name="LayingPattern" value="Beaut">Beautiful (Solid &amp; Uniform)</label>
                     <label><input type="radio" name="LayingPattern" value="Medio">Mediocre (Little spotty)</label>
                     <label><input type="radio" name="LayingPattern" value="Poor">Poor (Spotty)</label>  
-                    <label><input type="radio" name="LayingPattern" value="NA" checked>NA</label><!--Hide-->
+                    <label><input type="radio" name="LayingPattern" value="NA" checked>N/A</label><!--Hide-->
                 </div>
 
                 <div>
@@ -150,7 +150,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="radio" name="MiteTreatType" value="MiteTreatFAcid">Formic Acid</label>                    
                     <label><input type="radio" name="MiteTreatType" value="MiteTreatOxAcid">Oxalic Acid</label>                    
                     <label><input type="radio" name="MiteTreatType" value="MiteTreatHops">Hop Guard</label>                    
-                    <label><input type="radio" name="MiteTreatType" value="MiteTreatOther">Other:</label><input type="text" name="MiteTreatOtherText"><br>                    
+                    <label><input type="radio" name="MiteTreatType" value="MiteTreatOther">Other:</label><input type="text" name="MiteTreatOtherText"><br>               
                     <label>When do treatments need to be tended/removed?:<input type="date" name="TreatRemoveDate"></label>                    
                     
                     <h5>Other Problems/Treaments</h5>
@@ -162,6 +162,11 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="checkbox" name="OtherProbs[Other]" value="1">Other:<input type="text" name="OtherProbOtherText"></label><br>                   
                     <label>Treatments:<input type="text" name="OtherProbTreat"></label><br>                    
                     <label>Comments:<input type="text" name="OtherProbComments"></label>
+                    
+                    <h5>Dead Hive</h5><!-- this is a good spot for a colapsable form -->
+                    <label><input type="radio" name="Dead" value="No" checked>No</label>
+                    <label><input type="radio" name="Dead" value="Yes">Yes</label><br>   
+                    <label>Suspected Cause:<input type="text" name="DeadComments"></label>                
                 </div>           
                     
                 <div>
@@ -174,9 +179,13 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="checkbox" name="Actions[SwapBox]" value="1">Swapped brood boxes</label>
                     <label><input type="checkbox" name="Actions[RemoveComb]" value="1">Removed Old Comb:</label>
                     <label>How many frames?<input type="number" name="ActionsRemoveCombNumber"></label>
+                    <label><input type="checkbox" name="Actions[HoneyHarvest]" value="1">Honey Harvested:</label>
+                    <label>How many LBS?<input type="number" step="0.01" min="0" name="ActionsHoneyHarvNumber"></label>
                     <label><input type="checkbox" name="Actions[AddSuppers]" value="1">Added super(s)</label>
                     <label><input type="checkbox" name="Actions[Split]" value="1">Split hive:</label>
                     <label>New Hive #<input type="text" name="ActionsNewHiveNum"></label>
+                    <label><input type="checkbox" name="Actions[Merge]" value="1">Merge hive:</label>
+                    <label>Merged Hive #<input type="text" name="ActionsMergedHiveNum"></label>
                     <label><input type="checkbox" name="Actions[Other]" value="1">Other:</label><input type="text" name="ActionsOtherText">
                 </div>
                     
