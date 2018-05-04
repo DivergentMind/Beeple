@@ -1,4 +1,4 @@
-<?php require_once('load.php'); ?>
+<?php require_once('load_beeple.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,7 +13,7 @@
         $mysql = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         
         // Select data
-        $resource = $mysql->query("SELECT * FROM users");
+        $resource = $mysql->query("SELECT * FROM beeple_table");
         
         // Loop and fetch
         while($row = $resource->fetch_object()) {
@@ -118,8 +118,8 @@
                         <td><?php _e($result->SupraCellNum); ?></td>
                         <td><?php _e($result->HoneyStores); ?></td>
                         <td><?php _e($result->PollenStores); ?></td>
-
-                        <td><?php _e(implode(', ', unserialize($result->HiveCdns))); ?></td>
+                        
+                        <td><?php _e(implode(', ', serialize($result->HiveCdns))); ?></td> 
                     
                         <td><?php _e($result->HiveCdnOtherText); ?></td>
                         <td><?php _e($result->MiteCheck); ?></td>
@@ -152,11 +152,7 @@
                         <td><?php _e($result->RecReplaceEquipText); ?></td>
                         <td><?php _e($result->RecOtherText); ?></td>
                         <td><?php _e($result->RecComments); ?></td>
-                        <td><?php _e($result->GenComments); ?></td>
-
-
-                       <td><?php _e(implode(', ', unserialize($result->interests))); ?></td>
-                        
+                        <td><?php _e($result->GenComments); ?></td>                        
                     </tr>
                 <?php endforeach; ?>
             </tbody>
@@ -227,7 +223,6 @@
                     <th>General Comments:</th>  
                 </tr>
             </tfoot>
-
         </table>
     </body>
 </html>
