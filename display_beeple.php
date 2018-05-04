@@ -26,7 +26,7 @@
                 <tr>
                     <th>Hive ID</th>
                     <th>Date</th>
-                    <th>Who Worked Hive</th>
+                    <th>Worker</th>
                     <th>Location</th>
                     <th>Deeps</th>
                     <th>Mediums</th>
@@ -35,9 +35,9 @@
                     <th>Hive Temperament</th>
                     
                     <th>Saw Queen</th>
-                    <th>Marked</th>
-                    <th>Color</th>
-                    <th>Rough Age of Queen</th>
+                    <th>Queen Marked</th>
+                    <th>Mark Color</th>
+                    <th>Age</th>
                     
                     <th>Laying Pattern</th>
                     
@@ -51,11 +51,11 @@
                     <th>Comments:</th>
                     
                     <th>Queen Cells</th>
-                    <th>Along frame bottom (swarm cells):#</th>
-                    <th>Converted worker cell (supraceedure or emergency cells):#</th>
+                    <th>Swarm Cells</th>
+                    <th>Supraceedure Cells</th>
                     
-                    <th>Food Stores-Honey</th>
-                    <th>Food Stores-Pollen</th>
+                    <th>Honey Stores</th>
+                    <th>Pollen Stores</th>
                     
                     <th>Hive Condition</th>
                     <th>Other:</th>
@@ -68,19 +68,24 @@
                     <th>Other:</th>
                     <th>Remove/Tend Treatment</th>
                     <th>Other Problems:</th>
+                    <th>Comments:</th>
                     <th>Other Treatments:</th>
                     <th>Comments:</th>
                     
+                    <th>Hive Death</th>
+                    <th>Suspected Cause:</th>
+                                        
                     <th>Actions Taken</th>
-                    <th>How many frames?</th>
-                    <th>New Hive #</th>
+                    <th>Removed Comb</th>
+                    <th>Honey Harvested</th>
+                    <th>New Hive</th>
+                    <th>Merged Hives</th>
                     <th>Other:</th>
                     
                     <th>Recommendations:</th>
                     <th>Other:</th>
                     <th>Comments:</th>
-                    <th>Other:</th>
-                    
+                                        
                     <th>General Comments:</th>   
                     
                 </tr>
