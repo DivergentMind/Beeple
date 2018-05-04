@@ -6,7 +6,7 @@ $timestamp = time();
 $form_action = 'submit_form';
 $nonce = create_nonce($form_action, $timestamp);
 
-if ( ! empty( $_POST ) ) {echo('line 9 '); print_r($_POST); 
+if ( ! empty( $_POST ) ) {//print_r($_POST); 
     $insert = process($_POST);      
 }
 ?>
@@ -124,13 +124,13 @@ if ( ! empty( $_POST ) ) {echo('line 9 '); print_r($_POST);
                 </div>
                 
                 <div>
-                    <h4>Hive Condition</h4><!-- We might have to re-do checkboxes -->
-                    <label><input type="checkbox" name="HiveCdn" value="HiveCdnNorm">Normal</label>
-                    <label><input type="checkbox" name="HiveCdn" value="HiveCdnBraceComb">Brace Comb</label>
-                    <label><input type="checkbox" name="HiveCdn" value="HiveCdnExProp">Excessive Propolis</label>
-                    <label><input type="checkbox" name="HiveCdn" value="HiveCdnStink">Foul odor</label>
-                    <label><input type="checkbox" name="HiveCdn" value="HiveCdnDamage">Equip. Damage</label>
-                    <label><input type="checkbox" name="HiveCdn" value="HiveCdnOther">Other:</label><input type="text" name="HiveCdnOtherText">
+                    <h4>Hive Condition</h4>
+                    <label><input type="checkbox" name="HiveCdns[Norm]" value="1">Normal</label>
+                    <label><input type="checkbox" name="HiveCdns[BraceComb]" value="1">Brace Comb</label>
+                    <label><input type="checkbox" name="HiveCdns[ExProp]" value="1">Excessive Propolis</label>
+                    <label><input type="checkbox" name="HiveCdns[Stink]" value="1">Foul odor</label>
+                    <label><input type="checkbox" name="HiveCdns[Damage]" value="1">Equip. Damage</label>
+                    <label><input type="checkbox" name="HiveCdns[Other]" value="1">Other:</label><input type="text" name="HiveCdnOtherText">
                 </div>
 
                 <div>
@@ -143,61 +143,63 @@ if ( ! empty( $_POST ) ) {echo('line 9 '); print_r($_POST);
                     <label><input type="radio" name="SamplingMethod" value="NA" checked>NA<br></label>
                     <label>How many mites in the sample?<input type="number" name="MiteCount"></label><br> 
                     
-                    <!-- We might have to re-do checkboxes -->
-                    <!-- Do we REALLY want mite treatment as checkboxes? Noone does more then one treatment at a time. Maybe they would be better as radio buttons -->
                     
                     <label>Mite Treatment:<input type="radio" name="MiteTreat" value="No" checked>No</label><!-- this is a good spot for a colapsable form -->
                     <label><input type="radio" name="MiteTreat" value="Yes">Yes</label><br>
-                    <label><input type="checkbox" name="MiteTreatType" value="MiteTreatOils">Essential Oils</label>     
-                    <label><input type="checkbox" name="MiteTreatType" value="MiteTreatApivar">Apivar</label>
-                    <label><input type="checkbox" name="MiteTreatType" value="MiteTreatApistan">Apistan or Checkmate+</label>
-                    <label><input type="checkbox" name="MiteTreatType" value="MiteTreatFAcid">Formic Acid</label>
-                    <label><input type="checkbox" name="MiteTreatType" value="MiteTreatOxAcid">Oxalic Acid</label>
-                    <label><input type="checkbox" name="MiteTreatType" value="MiteTreatHops">Hop Guard</label>
-                    <label><input type="checkbox" name="MiteTreatType" value="MiteTreatOther">Other:</label>
-                    <input type="text" name="MiteTreatOtherText"><br>                    
+                    <label><input type="radio" name="MiteTreatType" value="NA" checked>NA</label> 
+                    <label><input type="radio" name="MiteTreatType" value="MiteTreatOils">Essential Oils</label>                    
+                    <label><input type="radio" name="MiteTreatType" value="MiteTreatApivar">Apivar</label>                    
+                    <label><input type="radio" name="MiteTreatType" value="MiteTreatApistan">Apistan or Checkmate+</label>                    
+                    <label><input type="radio" name="MiteTreatType" value="MiteTreatFAcid">Formic Acid</label>                    
+                    <label><input type="radio" name="MiteTreatType" value="MiteTreatOxAcid">Oxalic Acid</label>                    
+                    <label><input type="radio" name="MiteTreatType" value="MiteTreatHops">Hop Guard</label>                    
+                    <label><input type="radio" name="MiteTreatType" value="MiteTreatOther">Other:<input type="text" name="MiteTreatOtherText"></label><br>                    
                     <label>When do treatments need to be tended/removed?:<input type="date" name="TreatRemoveDate"></label>                    
                     
-                    <!-- We might have to re-do checkboxes -->
                     <h5>Other Problems/Treaments</h5>
-                    <label><input type="checkbox" name="OtherProb" value="OtherProbCB">Chalk Brood</label>
-                    <label><input type="checkbox" name="OtherProb" value="OtherProbNos">Nosema</label>
-                    <label><input type="checkbox" name="OtherProb" value="OtherProbEFB">E. Foulbrood</label>
-                    <label><input type="checkbox" name="OtherProb" value="OtherProbAFB">A. Foulbrood</label>
-                    <label><input type="checkbox" name="OtherProb" value="OtherProbBeetle">Hive Beetle</label>
-                    <label><input type="checkbox" name="OtherProb" value="OtherProbOther">Other:</label>
-                    <input type="text" name="OtherProbOtherText"><br>                   
+                    <label><input type="checkbox" name="OtherProbs[ChalkBrood]" value="1">Chalk Brood</label>
+                    <label><input type="checkbox" name="OtherProbs[Nos]" value="1">Nosema</label>
+                    <label><input type="checkbox" name="OtherProbs[EFB]" value="1">E. Foulbrood</label>
+                    <label><input type="checkbox" name="OtherProbs[AFB]" value="1">A. Foulbrood</label>
+                    <label><input type="checkbox" name="OtherProbs[Beetle]" value="1">Hive Beetle</label>
+                    <label><input type="checkbox" name="OtherProbs[Other]" value="1">Other:<input type="text" name="OtherProbOtherText"></label><br>                   
                     <label>Treatments:<input type="text" name="OtherProbTreat"></label><br>                    
                     <label>Comments:<input type="text" name="OtherProbComments"></label>
+                    
+                    <h5>Dead Hive</h5><!-- this is a good spot for a colapsable form -->
+                    <label><input type="radio" name="Dead" value="No" checked>No</label>
+                    <label><input type="radio" name="Dead" value="Yes">Yes</label><br>   
+                    <label>Suspected Cause:<input type="text" name="DeadComments"></label>                
                 </div>           
-                    <!-- We might have to re-do checkboxes -->
+                    
                 <div>
                     <h4>Actions Taken</h4>                    
-                    <label><input type="checkbox" name="Actions" value="ActionsNothing">Nothing</label>
-                    <label><input type="checkbox" name="Actions" value="ActionsFedSugar">Fed hive (suryp)</label>
-                    <label><input type="checkbox" name="Actions" value="ActionsFedPollen">Fed hive (pollen patty)</label>
-                    <label><input type="checkbox" name="Actions" value="ActionsExcluder">Added Excluder</label>
-                    <label><input type="checkbox" name="Actions" value="ActionsRequeen">Requeened</label>
-                    <label><input type="checkbox" name="Actions" value="ActionsSwapBox">Swapped brood boxes</label>
-                    <label><input type="checkbox" name="Actions" value="ActionsRemoveComb">Removed Old Comb:</label>
+                    <label><input type="checkbox" name="Actions[Nothing]" value="1">Nothing</label>
+                    <label><input type="checkbox" name="Actions[FedSugar]" value="1">Fed hive (suryp)</label>                    
+                    <label><input type="checkbox" name="Actions[FedPollen]" value="1">Fed hive (pollen patty)</label>
+                    <label><input type="checkbox" name="Actions[Excluder]" value="1">Added Excluder</label>
+                    <label><input type="checkbox" name="Actions[Requeen]" value="1">Requeened</label>
+                    <label><input type="checkbox" name="Actions[SwapBox]" value="1">Swapped brood boxes</label>
+                    <label><input type="checkbox" name="Actions[RemoveComb]" value="1">Removed Old Comb:</label>
                     <label>How many frames?<input type="number" name="ActionsRemoveCombNumber"></label>
-                    <label><input type="checkbox" name="Actions" value="ActionsAddSupers">Added super(s)</label>
-                    <label><input type="checkbox" name="Actions" value="ActionsSplit">Split hive:</label>
+                    <label><input type="checkbox" name="Actions[HoneyHarvest]" value="1">Honey Harvested:</label>
+                    <label>How many LBS?<input type="number" step="0.01" min="0" name="ActionsHoneyHarvNumber"></label>
+                    <label><input type="checkbox" name="Actions[AddSuppers]" value="1">Added super(s)</label>
+                    <label><input type="checkbox" name="Actions[Split]" value="1">Split hive:</label>
                     <label>New Hive #<input type="text" name="ActionsNewHiveNum"></label>
-                    <label><input type="checkbox" name="Actions" value="ActionsOther">Other:</label>
-                    <input type="text" name="ActionsOtherText">
+                    <label><input type="checkbox" name="Actions[Merge]" value="1">Merge hive:</label>
+                    <label>Merged Hive #<input type="text" name="ActionsMergedHiveNum"></label>
+                    <label><input type="checkbox" name="Actions[Other]" value="1">Other:<input type="text" name="ActionsOtherText"></label>
                 </div>
-                    <!-- We might have to re-do checkboxes -->
+                    
                 <div>
                     <h4>Recommendations:</h4>
-                    <label><input type="checkbox" name="Rec" value="RecAddSup">Add Supers</label>
-                    <label><input type="checkbox" name="Rec" value="RecSplit">Split</label>
-                    <label><input type="checkbox" name="Rec" value="RecReplaceQueeen">Replace Queen</label>
-                    <label><input type="checkbox" name="Rec" value="RecSwarmWatch">Swarming Imminent - Needs Monitoring</label>
-                    <label><input type="checkbox" name="Rec" value="RecReplaceEquip">Replace Equipment:</label>
-                    <input type="text" name="RecReplaceEquipText">
-                    <label><input type="checkbox" name="Rec" value="RecOther">Other:</label>
-                    <input type="text" name="RecOtherText"><br>
+                    <label><input type="checkbox" name="Recs[AddSup]" value="RecAddSup">Add Supers</label>
+                    <label><input type="checkbox" name="Recs[Split]" value="RecSplit">Split</label>
+                    <label><input type="checkbox" name="Recs[ReplaceQueen]" value="RecReplaceQueeen">Replace Queen</label>
+                    <label><input type="checkbox" name="Recs[SwarmWatch]" value="RecSwarmWatch">Swarming Imminent - Needs Monitoring</label>
+                    <label><input type="checkbox" name="Recs[ReplaceEquip]" value="RecReplaceEquip">Replace Equipment:<input type="text" name="RecReplaceEquipText"></label>                    
+                    <label><input type="checkbox" name="Recs[Other]" value="RecOther"> Other:<input type="text" name="RecOtherText"></label> <br>                    
                     <label>Comments:<input type="text" name="RecComments"></label>
                 </div>
 
