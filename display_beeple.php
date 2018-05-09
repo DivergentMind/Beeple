@@ -20,12 +20,12 @@
         	$results[] = $row;
         }
         ?>
-        
+
         <table>
             <thead>
-                <tr>
+                <tr>    
                     <th>Hive ID</th>
-                    <th>Date</th>
+                    <th>Date</th>    
                     <th>Worker</th>
                     <th>Location</th>
                     <th>Deeps</th>
@@ -86,8 +86,7 @@
                     <th>Other:</th>
                     <th>Comments:</th>
                                         
-                    <th>General Comments:</th>   
-                    
+                    <th>General Comments:</th>                      
                 </tr>
             </thead>
 
@@ -119,7 +118,7 @@
                         <td><?php _e($result->HoneyStores); ?></td>
                         <td><?php _e($result->PollenStores); ?></td>
                         
-                        <td><?php _e(implode(', ', serialize($result->HiveCdns))); ?></td> 
+                        <td><?php _e(implode(', ', unserialize($result->HiveCdns))); ?></td> 
                     
                         <td><?php _e($result->HiveCdnOtherText); ?></td>
                         <td><?php _e($result->MiteCheck); ?></td>
@@ -152,7 +151,7 @@
                         <td><?php _e($result->RecReplaceEquipText); ?></td>
                         <td><?php _e($result->RecOtherText); ?></td>
                         <td><?php _e($result->RecComments); ?></td>
-                        <td><?php _e($result->GenComments); ?></td>                        
+                        <td><?php _e($result->GenComments); ?></td>   
                     </tr>
                 <?php endforeach; ?>
             </tbody>

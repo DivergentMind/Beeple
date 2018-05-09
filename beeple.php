@@ -20,7 +20,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
         <!-- FONT –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
         <!-- CSS –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="css/skeleton.css">
     </head>
 
@@ -87,7 +87,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                 <div>
                     <h4>Population</h4>
                     <label><input type="radio" name="Population" value="Stro">Strong</label>
-                    <label><input type="radio" name="Population" value="Mod" checked>Moderate</label>
+                    <label><input type="radio" name="Population" value="Mod">Moderate</label>
                     <label><input type="radio" name="Population" value="Weak">Weak<br></label>
                     <label><input type="radio" name="Population" value="NA" checked hidden></label>
                     <label>Crowded?<input type="radio" name="Crowded" value="Yes">Yes</label>
@@ -152,7 +152,8 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="radio" name="MiteTreatType" value="MiteTreatOxAcid">Oxalic Acid</label>                    
                     <label><input type="radio" name="MiteTreatType" value="MiteTreatHops">Hop Guard</label>                    
                     <label><input type="radio" name="MiteTreatType" value="MiteTreatOther">Other:</label><input type="text" name="MiteTreatOtherText"><br>               
-                    <label>When do treatments need to be tended/removed?:<input type="date" name="TreatRemoveDate"></label>                    
+                    <label>When do treatments need to be tended/removed?:<input type="date" name="TreatRemoveDate"></label>
+                    <input type="hidden" name="MiteTreatType" value="NA" checked><!--Hide--> 
                     
                     <h5>Other Problems/Treaments</h5>
                     <label><input type="checkbox" name="OtherProbs[ChalkBrood]" value="1">Chalk Brood</label>
@@ -160,7 +161,8 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="checkbox" name="OtherProbs[EFB]" value="1">E. Foulbrood</label>
                     <label><input type="checkbox" name="OtherProbs[AFB]" value="1">A. Foulbrood</label>
                     <label><input type="checkbox" name="OtherProbs[Beetle]" value="1">Hive Beetle</label>
-                    <label><input type="checkbox" name="OtherProbs[Other]" value="1">Other:<input type="text" name="OtherProbOtherText"></label><br>                   
+                    <label><input type="checkbox" name="OtherProbs[Other]" value="1">Other:<input type="text" name="OtherProbOtherText"></label><br>
+                    <input type="hidden" name="OtherProbs[NA]" value="0">
                     <label>Treatments:<input type="text" name="OtherProbTreat"></label><br>                    
                     <label>Comments:<input type="text" name="OtherProbComments"></label>
                     
