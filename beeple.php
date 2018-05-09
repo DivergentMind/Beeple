@@ -24,7 +24,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
         <link rel="stylesheet" href="css/skeleton.css">
     </head>
 
-    <body>
+<body>
         <?php 
             if ( isset( $insert ) ) { 
                 echo do_messages($insert);
@@ -45,16 +45,16 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label>Who Worked Hive: <input type="text" name="Worker"></label>        
                     <label>Location: <input type="text" name="Loc"></label> <br>
                     <p>Hive Size:</p>
-                    <label>Deeps:<input type="number" name="NumOfDeeps"></label>        
-                    <label>Mediums:<input type="number" name="NumOfMediums"></label>                    
-                    <label>Shallows:<input type="number" name="NumOfShallows"></label>
+                    <label>Deeps:<input type="number" name="NumOfDeeps" min="0"></label>        
+                    <label>Mediums:<input type="number" name="NumOfMediums" min="0"></label>                    
+                    <label>Shallows:<input type="number" name="NumOfShallows" min="0"></label>
                 </div>
                 <div>
                     <h4>Hive Temperament</h4>
                     <label><input type="radio" name="Temperament" value="Calm" checked>Calm</label>
                     <label><input type="radio" name="Temperament" value="Nervous" >Nervous</label>
                     <label><input type="radio" name="Temperament" value="Aggressive">Aggressive</label>
-                    <input type="hidden" name="Temperament" value="NA"><!--Hide-->
+                    <label><input type="radio" name="Temperament" value="NA" checked hidden></label>
                 </div>
 
                 <div>
@@ -62,10 +62,11 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="radio" name="QueenSeen" value="No" checked>No</label>
                     <label><input type="radio" name="QueenSeen" value="Yes">Yes</label>
                     <p>Marked?</p>
-                    <label><input type="radio" name="QueenMarked" value="No" checked>No</label>
+                    <label><input type="radio" name="QueenMarked" value="Unknown" checked>Unknown</label>
+                    <label><input type="radio" name="QueenMarked" value="No" >No</label>
                     <label><input type="radio" name="QueenMarked" value="Yes">Yes</label>
                     <label>Color:<input type="text" name="QueenColor"></label>                    
-                    <label>Rough Age of Queen: <input type="number" step="0.1" name="QueenAge">Years</label>
+                    <label>Rough Age of Queen: <input type="number" step="0.1" name="QueenAge" min="0">Years</label>
                 </div>
 
                 <div>
@@ -73,7 +74,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="radio" name="LayingPattern" value="Beaut">Beautiful (Solid &amp; Uniform)</label>
                     <label><input type="radio" name="LayingPattern" value="Medio">Mediocre (Little spotty)</label>
                     <label><input type="radio" name="LayingPattern" value="Poor">Poor (Spotty)</label>  
-                    <input type="hidden" name="LayingPattern" value="NA" checked><!--Hide-->
+                    <label><input type="radio" name="LayingPattern" value="NA" checked hidden></label>
                 </div>
 
                 <div>
@@ -88,7 +89,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="radio" name="Population" value="Stro">Strong</label>
                     <label><input type="radio" name="Population" value="Mod">Moderate</label>
                     <label><input type="radio" name="Population" value="Weak">Weak<br></label>
-                    <input type="hidden" name="Population" value="NA" checked><!--Hide-->
+                    <label><input type="radio" name="Population" value="NA" checked hidden></label>
                     <label>Crowded?<input type="radio" name="Crowded" value="Yes">Yes</label>
                     <label><input type="radio" name="Crowded" value="No" checked>No</label>                    
                 </div>
@@ -104,8 +105,8 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <h4>Queen Cells</h4><!-- this is a good spot for a colapsable form -->
                     <label><input type="radio" name="QueenCells" value="No" checked>No</label>
                     <label><input type="radio" name="QueenCells" value="Yes">Yes:</label><br>    
-                    <label>Along frame bottom (swarm cells):#<input type="number" name="SwarmCellNum"></label><br>
-                    <label>Converted worker cell (supraceedure or emergency cells):#<input type="number" name="SupraCellNum"></label>
+                    <label>Along frame bottom (swarm cells):#<input type="number" name="SwarmCellNum" min="0"></label><br>
+                    <label>Converted worker cell (supraceedure or emergency cells):#<input type="number" name="SupraCellNum" min="0"></label>
                 </div>
                 
                 <div>
@@ -113,11 +114,11 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label>Honey:<input type="radio" name="HoneyStores" value="Plenty">Plenty</label>                    
                     <label><input type="radio" name="HoneyStores" value="Fine">Fine</label>                    
                     <label><input type="radio" name="HoneyStores" value="Sparse">Sparse</label>
-                    <input type="hidden" name="HoneyStores" value="NA" checked>NA<br><!--Hide-->
+                    <label><input type="radio" name="HoneyStores" value="NA" checked hidden></label><br>
                     <label>Pollen:<input type="radio" name="PollenStores" value="Plenty">Plenty</label>                    
                     <label><input type="radio" name="PollenStores" value="Fine" checked>Fine</label>                    
                     <label><input type="radio" name="PollenStores" value="Sparse">Sparse</label>
-                    <input type="radio" name="PollenStores" value="NA" checked><!--Hide-->
+                    <label><input type="radio" name="PollenStores" value="NA" checked hidden></label>
                 </div>
                 
                 <div>
@@ -131,18 +132,19 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                 </div>
 
                 <div>
-                    <h4>Disease/Pests</h4>                    
+                    <h4>Disease/Pests/Death</h4>                    
                     <h5>Verroa mites</h5><!-- this is a good spot for a colapsable form -->
                     <label>Mite Check:<input type="radio" name="MiteCheck" value="No" checked>No</label>
                     <label><input type="radio" name="MiteCheck" value="Yes">Yes</label><br>                    
                     <label><input type="radio" name="SamplingMethod" value="Sugar" checked>Sugar Roll</label>                    
                     <label><input type="radio" name="SamplingMethod" value="Alcohol">Alcohol Wash</label>
                     <label><input type="radio" name="SamplingMethod" value="NA" checked>N/A<br></label>
-                    <label>How many mites in the sample?<input type="number" name="MiteCount"></label><br> 
+                    <label>How many mites in the sample?<input type="number" name="MiteCount" min="0" value="null"></label><br> 
                     
                     
                     <label>Mite Treatment:<input type="radio" name="MiteTreat" value="No" checked>No</label><!-- this is a good spot for a colapsable form -->
                     <label><input type="radio" name="MiteTreat" value="Yes">Yes</label><br>
+                    <label><input type="radio" name="MiteTreatType" value="NA" checked hidden></label> 
                     <label><input type="radio" name="MiteTreatType" value="MiteTreatOils">Essential Oils</label>                    
                     <label><input type="radio" name="MiteTreatType" value="MiteTreatApivar">Apivar</label>                    
                     <label><input type="radio" name="MiteTreatType" value="MiteTreatApistan">Apistan or Checkmate+</label>                    
@@ -172,32 +174,38 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     
                 <div>
                     <h4>Actions Taken</h4>                    
-                    <label><input type="checkbox" name="Actions[Nothing]" value="1">Nothing</label>
                     <label><input type="checkbox" name="Actions[FedSugar]" value="1">Fed Hive (Suryp)</label>                    
                     <label><input type="checkbox" name="Actions[FedPollen]" value="1">Fed Hive (Pollen Patty)</label>
                     <label><input type="checkbox" name="Actions[Excluder]" value="1">Added Excluder</label>
                     <label><input type="checkbox" name="Actions[Requeen]" value="1">Requeened</label>
                     <label><input type="checkbox" name="Actions[SwapBox]" value="1">Swapped Brood Boxes</label>
                     <label><input type="checkbox" name="Actions[RemoveComb]" value="1">Removed Old Comb:</label>
-                    <label>How many frames?<input type="number" name="ActionsRemoveCombNumber"></label>
+                    <label>How many frames?<input type="number" name="ActionsRemoveCombNumber" min="0"></label>
                     <label><input type="checkbox" name="Actions[HoneyHarvest]" value="1">Honey Harvested:</label>
                     <label>How many Pounds?<input type="number" step="0.01" min="0" name="ActionsHoneyHarvNumber"></label>
-                    <label><input type="checkbox" name="Actions[AddSuppers]" value="1">Added super(s)</label>
+                    <label><input type="checkbox" name="Actions[AddBox]" value="1">Added Box</label>
                     <label><input type="checkbox" name="Actions[Split]" value="1">Split Hive:</label>
                     <label>New Hive #<input type="text" name="ActionsNewHiveNum"></label>
                     <label><input type="checkbox" name="Actions[Merge]" value="1">Merged Hive:</label>
                     <label>Merged Hive #<input type="text" name="ActionsMergedHiveNum"></label>
+                    <label><input type="checkbox" name="Recs[ReplaceEquip]" value="1">Replaced Equipment</label>
                     <label><input type="checkbox" name="Actions[Other]" value="1">Other:</label><input type="text" name="ActionsOtherText">
+                    
                 </div>
                     
                 <div>
                     <h4>Recommendations:</h4>
-                    <label><input type="checkbox" name="Recs[AddSup]" value="RecAddSup">Add Supers</label>
-                    <label><input type="checkbox" name="Recs[Split]" value="RecSplit">Split</label>
-                    <label><input type="checkbox" name="Recs[ReplaceQueen]" value="RecReplaceQueeen">Replace Queen</label>
-                    <label><input type="checkbox" name="Recs[SwarmWatch]" value="RecSwarmWatch">Swarming Imminent - Needs Monitoring</label>
-                    <label><input type="checkbox" name="Recs[ReplaceEquip]" value="RecReplaceEquip">Replace Equipment:<input type="text" name="RecReplaceEquipText"></label>                    
-                    <label><input type="checkbox" name="Recs[Other]" value="RecOther">Other:</label><input type="text" name="RecOtherText"><br>                    
+                    <label><input type="checkbox" name="Recs[FedSugar]" value="1">Feed Hive (Suryp)</label>                    
+                    <label><input type="checkbox" name="Recs[FedPollen]" value="1">Feed Hive (Pollen Patty)</label>
+                    <label><input type="checkbox" name="Recs[Excluder]" value="1">Add Excluder</label>
+                    <label><input type="checkbox" name="Recs[AddBox]" value="1">Add Box</label>
+                    <label><input type="checkbox" name="Recs[Split]" value="1">Split</label>
+                    <label><input type="checkbox" name="Recs[Merge]" value="1">Merge Hive:</label>
+                    <label><input type="checkbox" name="Recs[ReplaceQueen]" value="1">Replace Queen</label>
+                    <label><input type="checkbox" name="Recs[SwarmWatch]" value="1">Swarming Imminent - Needs Monitoring</label>
+                    <label><input type="checkbox" name="Recs[ReplaceEquip]" value="1">Replace Equipment:<input type="text" name="RecReplaceEquipText"></label>                   
+                    <label><input type="checkbox" name="Recs[HoneyHarvest]" value="1">Honey Harvest:</label>
+                    <label><input type="checkbox" name="Recs[Other]" value="1">Other:</label><input type="text" name="RecOtherText"><br>                    
                     <label>Comments:<input type="text" name="RecComments"></label>
                 </div>
 
@@ -205,7 +213,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label>General Comments:<input type="text" name="GenComments"></label><br>
                     <button>Submit</button>
                 </div>
-            </form>
-        </div>
-    </div>    
+                </form>
+            </div>
+        </div>    
 </body>
