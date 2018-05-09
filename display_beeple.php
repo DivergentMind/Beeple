@@ -118,7 +118,12 @@
                         <td><?php _e($result->HoneyStores); ?></td>
                         <td><?php _e($result->PollenStores); ?></td>
                         
-                        <td><?php _e(implode(', ', unserialize($result->HiveCdns))); ?></td> 
+                        <td><?php if ( ! empty ( $result->HiveCdns )){
+                                    _e(implode(', ', unserialize($result->HiveCdns)));
+}
+                                else {
+                                    _e('');                            
+}?></td> 
                     
                         <td><?php _e($result->HiveCdnOtherText); ?></td>
                         <td><?php _e($result->MiteCheck); ?></td>
@@ -129,7 +134,14 @@
                         <td><?php _e($result->MiteTreatOtherText); ?></td>
                         <td><?php _e($result->TreatRemoveDate); ?></td>
                         
-                        <td><?php _e(implode(', ', unserialize($result->OtherProbs))); ?></td>
+                        <td><?php if ( ! empty ( $result->OtherProbs )){
+                                    _e(implode(', ', unserialize($result->OtherProbs)));
+}
+                                else {
+                                    _e('');                            
+}?></td> 
+                        
+                        
                         
                         <td><?php _e($result->OtherProbOtherText); ?></td>
                         <td><?php _e($result->OtherProbTreat); ?></td>
@@ -137,7 +149,13 @@
                         <td><?php _e($result->Dead); ?></td>
                         <td><?php _e($result->DeadComments); ?></td>
                         
-                        <td><?php _e(implode(', ', unserialize($result->Actions))); ?></td>
+                        <td><?php if ( ! empty ( $result->Actions )){
+                                    _e(implode(', ', unserialize($result->Actions)));
+}
+                                else {
+                                    _e('');                            
+}?></td>
+                        
                         
                         <td><?php _e($result->ActionsRemoveCombNumber); ?></td>             
                         <td><?php _e($result->ActionsHoneyHarvNumber); ?></td>
@@ -146,7 +164,13 @@
                         <td><?php _e($result->ActionsMergedHiveNum); ?></td>
                         <td><?php _e($result->ActionsOtherText); ?></td>
                         
-                        <td><?php _e(implode(', ', unserialize($result->Recs))); ?></td>
+                        <td><?php if ( ! empty ( $result->Recs )){
+                                    _e(implode(', ', unserialize($result->Recs)));
+}
+                                else {
+                                    _e('');                            
+}?></td>
+                       
                         
                         <td><?php _e($result->RecReplaceEquipText); ?></td>
                         <td><?php _e($result->RecOtherText); ?></td>
