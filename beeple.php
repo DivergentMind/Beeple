@@ -20,7 +20,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
         <!-- FONT –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
         <!-- CSS –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="css/skeleton.css">
     </head>
 
@@ -54,7 +54,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="radio" name="Temperament" value="Calm" checked>Calm</label>
                     <label><input type="radio" name="Temperament" value="Nervous" >Nervous</label>
                     <label><input type="radio" name="Temperament" value="Aggressive">Aggressive</label>
-                    <label><input type="radio" name="Temperament" value="NA">N/A</label><!--Hide-->
+                    <input type="hidden" name="Temperament" value="NA"><!--Hide-->
                 </div>
 
                 <div>
@@ -73,7 +73,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="radio" name="LayingPattern" value="Beaut">Beautiful (Solid &amp; Uniform)</label>
                     <label><input type="radio" name="LayingPattern" value="Medio">Mediocre (Little spotty)</label>
                     <label><input type="radio" name="LayingPattern" value="Poor">Poor (Spotty)</label>  
-                    <label><input type="radio" name="LayingPattern" value="NA" checked>N/A</label><!--Hide-->
+                    <input type="hidden" name="LayingPattern" value="NA" checked><!--Hide-->
                 </div>
 
                 <div>
@@ -86,9 +86,9 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                 <div>
                     <h4>Population</h4>
                     <label><input type="radio" name="Population" value="Stro">Strong</label>
-                    <label><input type="radio" name="Population" value="Mod" checked>Moderate</label>
+                    <label><input type="radio" name="Population" value="Mod">Moderate</label>
                     <label><input type="radio" name="Population" value="Weak">Weak<br></label>
-                    <label><input type="radio" name="Population" value="NA" checked>N/A</label><!--Hide-->
+                    <input type="hidden" name="Population" value="NA" checked><!--Hide-->
                     <label>Crowded?<input type="radio" name="Crowded" value="Yes">Yes</label>
                     <label><input type="radio" name="Crowded" value="No" checked>No</label>                    
                 </div>
@@ -113,11 +113,11 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label>Honey:<input type="radio" name="HoneyStores" value="Plenty">Plenty</label>                    
                     <label><input type="radio" name="HoneyStores" value="Fine">Fine</label>                    
                     <label><input type="radio" name="HoneyStores" value="Sparse">Sparse</label>
-                    <label><input type="radio" name="HoneyStores" value="NA" checked>N/A</label><br><!--Hide-->
+                    <input type="hidden" name="HoneyStores" value="NA" checked>NA<br><!--Hide-->
                     <label>Pollen:<input type="radio" name="PollenStores" value="Plenty">Plenty</label>                    
                     <label><input type="radio" name="PollenStores" value="Fine" checked>Fine</label>                    
                     <label><input type="radio" name="PollenStores" value="Sparse">Sparse</label>
-                    <label><input type="radio" name="PollenStores" value="NA" checked>N/A</label><!--Hide-->
+                    <input type="radio" name="PollenStores" value="NA" checked><!--Hide-->
                 </div>
                 
                 <div>
@@ -143,7 +143,6 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     
                     <label>Mite Treatment:<input type="radio" name="MiteTreat" value="No" checked>No</label><!-- this is a good spot for a colapsable form -->
                     <label><input type="radio" name="MiteTreat" value="Yes">Yes</label><br>
-                    <label><input type="radio" name="MiteTreatType" value="NA" checked>N/A</label><!--Hide--> 
                     <label><input type="radio" name="MiteTreatType" value="MiteTreatOils">Essential Oils</label>                    
                     <label><input type="radio" name="MiteTreatType" value="MiteTreatApivar">Apivar</label>                    
                     <label><input type="radio" name="MiteTreatType" value="MiteTreatApistan">Apistan or Checkmate+</label>                    
@@ -151,7 +150,8 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="radio" name="MiteTreatType" value="MiteTreatOxAcid">Oxalic Acid</label>                    
                     <label><input type="radio" name="MiteTreatType" value="MiteTreatHops">Hop Guard</label>                    
                     <label><input type="radio" name="MiteTreatType" value="MiteTreatOther">Other:</label><input type="text" name="MiteTreatOtherText"><br>               
-                    <label>When do treatments need to be tended/removed?:<input type="date" name="TreatRemoveDate"></label>                    
+                    <label>When do treatments need to be tended/removed?:<input type="date" name="TreatRemoveDate"></label>
+                    <input type="hidden" name="MiteTreatType" value="NA" checked><!--Hide--> 
                     
                     <h5>Other Problems/Treaments</h5>
                     <label><input type="checkbox" name="OtherProbs[ChalkBrood]" value="1">Chalk Brood</label>
@@ -159,7 +159,8 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="checkbox" name="OtherProbs[EFB]" value="1">E. Foulbrood</label>
                     <label><input type="checkbox" name="OtherProbs[AFB]" value="1">A. Foulbrood</label>
                     <label><input type="checkbox" name="OtherProbs[Beetle]" value="1">Hive Beetle</label>
-                    <label><input type="checkbox" name="OtherProbs[Other]" value="1">Other:<input type="text" name="OtherProbOtherText"></label><br>                   
+                    <label><input type="checkbox" name="OtherProbs[Other]" value="1">Other:<input type="text" name="OtherProbOtherText"></label><br>
+                    <input type="hidden" name="OtherProbs[NA]" value="0">
                     <label>Treatments:<input type="text" name="OtherProbTreat"></label><br>                    
                     <label>Comments:<input type="text" name="OtherProbComments"></label>
                     
