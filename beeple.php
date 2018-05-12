@@ -17,11 +17,55 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
         <title>Beeple</title> 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="js/jquery.js"></script>
         <!-- FONT –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
         <!-- CSS –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="css/skeleton.css">
+        
+        
+    <style>
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .MiteTreat {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        </style>
+        
+        
     </head>
 
 <body>
@@ -38,19 +82,21 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <input type="hidden" name="form_action" value="<?php echo $form_action; ?>">
                     <input type="hidden" name="nonce" value="<?php echo $nonce; ?>">
 
-                <div>
-                    <label>Hive ID: <input type="text" name="HiveID"></label>
-                    <label>Date: <input type="date" name="Date"></label>
-                    <!-- Date input not supported in all browsers, consider using a polyphill. Also look up what 'polyfill' means-->
-                    <label>Who Worked Hive: <input type="text" name="Worker"></label>        
-                    <label>Location: <input type="text" name="Loc"></label> <br>
-                    <p>Hive Size:</p>
+                <div class="row">
+                    <div class="u-full-width">
+                        <label>Hive ID: <input type="text" name="HiveID"></label>
+                        <label>Date: <input type="date" name="Date"></label>
+                        <!-- Date input not supported in all browsers, consider using a polyphill. Also look up what 'polyfill' means-->
+                        <label>Who Worked Hive: <input type="text" name="Worker"></label>        
+                        <label>Location: <input type="text" name="Loc"></label> <br>
+                    </div>
+                    <h5>Hive Size:</h5>
                     <label>Deeps:<input type="number" name="NumOfDeeps" min="0"></label>        
                     <label>Mediums:<input type="number" name="NumOfMediums" min="0"></label>                    
                     <label>Shallows:<input type="number" name="NumOfShallows" min="0"></label>
                 </div>
                 <div>
-                    <h4>Hive Temperament</h4>
+                    <h5>Hive Temperament</h5>
                     <label><input type="radio" name="Temperament" value="Calm" checked>Calm</label>
                     <label><input type="radio" name="Temperament" value="Nervous" >Nervous</label>
                     <label><input type="radio" name="Temperament" value="Aggressive">Aggressive</label>
@@ -66,7 +112,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="radio" name="QueenMarked" value="No" >No</label>
                     <label><input type="radio" name="QueenMarked" value="Yes">Yes</label>
                     <label>Color:<input type="text" name="QueenColor"></label>                    
-                    <label>Rough Age of Queen: <input type="number" step="0.1" name="QueenAge" min="0">Years</label>
+                    <label>Age of Queen: <input type="number" step="0.1" name="QueenAge" min="0" placeholder="Years"></label>
                 </div>
 
                 <div>
@@ -95,9 +141,9 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                 </div>
 
                 <div>
-                    <h4>Excesive Drone Cells</h4>
+                    <h4>Excessive Drone Cells</h4>
                     <label><input type="radio" name="ExcesiveDrone" value="No" checked>No</label>
-                    <label><input type="radio" name="ExcesiveDrone" value="Yes">Yes </label><br>                    
+                    <label><input type="radio" name="ExcesiveDrone" value="Yes">Yes</label><br>                    
                     <label>Comments:<input type="text" name="DroneComments"></label>
                 </div>
 
@@ -116,9 +162,9 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="radio" name="HoneyStores" value="Sparse">Sparse</label>
                     <label><input type="radio" name="HoneyStores" value="NA" checked hidden></label><br>
                     <label>Pollen:<input type="radio" name="PollenStores" value="Plenty">Plenty</label>                    
-                    <label><input type="radio" name="PollenStores" value="Fine" checked>Fine</label>                    
+                    <label><input type="radio" name="PollenStores" value="Fine">Fine</label>                    
                     <label><input type="radio" name="PollenStores" value="Sparse">Sparse</label>
-                    <label><input type="radio" name="PollenStores" value="NA" checked hidden></label>
+                    <label><input type="hidden" name="PollenStores" value="NA" checked ></label>
                 </div>
                 
                 <div>
@@ -136,26 +182,32 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <h5>Verroa mites</h5><!-- this is a good spot for a colapsable form -->
                     <label>Mite Check:<input type="radio" name="MiteCheck" value="No" checked>No</label>
                     <label><input type="radio" name="MiteCheck" value="Yes">Yes</label><br>                    
-                    <label><input type="radio" name="SamplingMethod" value="Sugar" checked>Sugar Roll</label>                    
+                    <label><input type="radio" name="SamplingMethod" value="Sugar" checked>Sugar Roll</label>                 
                     <label><input type="radio" name="SamplingMethod" value="Alcohol">Alcohol Wash</label>
                     <label><input type="radio" name="SamplingMethod" value="NA" checked>N/A<br></label>
-                    <label>How many mites in the sample?<input type="number" name="MiteCount" min="0" value="null"></label><br> 
+                    <label>How many mites in the sample?<input type="number" name="MiteCount" min="0" value="null"></label><br>
+                    <button type="button" id="MiteTreatBtn">Recommend Mite Treatment</button>
+                    
+                    <div id="MiteModal"class="modal">
+                        <div class="MiteTreat">
+                            <span class="close">&times;</span>
+                            <label>Mite Treatment:<input type="radio" name="MiteTreat" value="No" checked>No</label><!-- this is a good spot for a colapsable form -->
+                            <label><input type="radio" name="MiteTreat" value="Yes">Yes</label><br>
+                            <label><input type="radio" name="MiteTreatType" value="NA" checked hidden></label> 
+                            <label><input type="radio" name="MiteTreatType" value="MiteTreatOils">Essential Oils</label>                    
+                            <label><input type="radio" name="MiteTreatType" value="MiteTreatApivar">Apivar</label>                    
+                            <label><input type="radio" name="MiteTreatType" value="MiteTreatApistan">Apistan or Checkmate+</label>                    
+                            <label><input type="radio" name="MiteTreatType" value="MiteTreatFAcid">Formic Acid</label>                    
+                            <label><input type="radio" name="MiteTreatType" value="MiteTreatOxAcid">Oxalic Acid</label>                    
+                            <label><input type="radio" name="MiteTreatType" value="MiteTreatHops">Hop Guard</label>                    
+                            <label><input type="radio" name="MiteTreatType" value="MiteTreatOther">Other:</label><input type="text" name="MiteTreatOtherText"><br>               
+                            <label>When do treatments need to be tended/removed?:<input type="date" name="TreatRemoveDate"></label>
+                            <input type="hidden" name="MiteTreatType" value="NA" checked><!--Hide--> 
+                        </div>
+                    </div>
                     
                     
-                    <label>Mite Treatment:<input type="radio" name="MiteTreat" value="No" checked>No</label><!-- this is a good spot for a colapsable form -->
-                    <label><input type="radio" name="MiteTreat" value="Yes">Yes</label><br>
-                    <label><input type="radio" name="MiteTreatType" value="NA" checked hidden></label> 
-                    <label><input type="radio" name="MiteTreatType" value="MiteTreatOils">Essential Oils</label>                    
-                    <label><input type="radio" name="MiteTreatType" value="MiteTreatApivar">Apivar</label>                    
-                    <label><input type="radio" name="MiteTreatType" value="MiteTreatApistan">Apistan or Checkmate+</label>                    
-                    <label><input type="radio" name="MiteTreatType" value="MiteTreatFAcid">Formic Acid</label>                    
-                    <label><input type="radio" name="MiteTreatType" value="MiteTreatOxAcid">Oxalic Acid</label>                    
-                    <label><input type="radio" name="MiteTreatType" value="MiteTreatHops">Hop Guard</label>                    
-                    <label><input type="radio" name="MiteTreatType" value="MiteTreatOther">Other:</label><input type="text" name="MiteTreatOtherText"><br>               
-                    <label>When do treatments need to be tended/removed?:<input type="date" name="TreatRemoveDate"></label>
-                    <input type="hidden" name="MiteTreatType" value="NA" checked><!--Hide--> 
-                    
-                    <h5>Other Problems/Treaments</h5>
+                    <h5>Other Problems</h5>
                     <label><input type="checkbox" name="OtherProbs[ChalkBrood]" value="1">Chalk Brood</label>
                     <label><input type="checkbox" name="OtherProbs[Nos]" value="1">Nosema</label>
                     <label><input type="checkbox" name="OtherProbs[EFB]" value="1">E. Foulbrood</label>
@@ -189,8 +241,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="checkbox" name="Actions[Merge]" value="1">Merged Hive:</label>
                     <label>Merged Hive #<input type="text" name="ActionsMergedHiveNum"></label>
                     <label><input type="checkbox" name="Recs[ReplaceEquip]" value="1">Replaced Equipment</label>
-                    <label><input type="checkbox" name="Actions[Other]" value="1">Other:</label><input type="text" name="ActionsOtherText">
-                    
+                    <label><input type="checkbox" name="Actions[Other]" value="1">Other:</label><input type="text" name="ActionsOtherText">                    
                 </div>
                     
                 <div>
@@ -211,9 +262,39 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
 
                 <div>                
                     <label>General Comments:<input type="text" name="GenComments"></label><br>
-                    <button>Submit</button>
+                    <button type="submit">Submit</button>
                 </div>
                 </form>
             </div>
-        </div>    
+        </div>   
+<script type='text/javascript' src='js/modal.js'></script>
+<script>
+
+        // Get the modal
+        var modal = document.getElementById('MiteModal');
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("MiteTreatBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modal.css.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it            
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        } 
+
+</script>
 </body>
