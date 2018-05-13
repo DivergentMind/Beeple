@@ -8,7 +8,6 @@
         <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
         <!-- CSS –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="css/skeleton.css">
     </head>
     
     <body>
