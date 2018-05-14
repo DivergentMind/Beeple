@@ -100,74 +100,78 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="radio" name="Temperament" value="Calm" checked>Calm</label>
                     <label><input type="radio" name="Temperament" value="Nervous" >Nervous</label>
                     <label><input type="radio" name="Temperament" value="Aggressive">Aggressive</label>
-                    <label><input type="radio" name="Temperament" value="NA" checked hidden></label>
+                    <label><input type="radio, hidden" name="Temperament" value="NA" checked hidden></label>
                 </div>
 
                 <div>
-                    <h4>Saw Queen</h4> <!-- this is a good spot for a colapsable form -->
+                    <h5>Saw Queen</h5> <!-- this is a good spot for a colapsable form -->
                     <label><input type="radio" name="QueenSeen" value="No" checked>No</label>
                     <label><input type="radio" name="QueenSeen" value="Yes">Yes</label>
-                    <p>Marked?</p>
+            <!--    <p>Marked?</p>
                     <label><input type="radio" name="QueenMarked" value="Unknown" checked>Unknown</label>
                     <label><input type="radio" name="QueenMarked" value="No" >No</label>
                     <label><input type="radio" name="QueenMarked" value="Yes">Yes</label>
                     <label>Color:<input type="text" name="QueenColor"></label>                    
                     <label>Age of Queen: <input type="number" step="0.1" name="QueenAge" min="0" placeholder="Years"></label>
+-->
                 </div>
 
                 <div>
-                    <h4>Laying Pattern</h4>
+                    <h5>Brood</h5>
                     <label><input type="radio" name="LayingPattern" value="Beaut">Beautiful (Solid &amp; Uniform)</label>
                     <label><input type="radio" name="LayingPattern" value="Medio">Mediocre (Little spotty)</label>
                     <label><input type="radio" name="LayingPattern" value="Poor">Poor (Spotty)</label>  
-                    <label><input type="radio" name="LayingPattern" value="NA" checked hidden></label>
-                </div>
-
-                <div>
-                    <h4>Eggs Seen</h4>
-                    <label><input type="radio" name="EggsSeen" value="Yes">Yes</label>
+                    <label><input type="radio, hidden" name="LayingPattern" value="NA" checked hidden></label><br>
+                    <label>How Many Brood Frames:<input type="number" name="NumbBroodFrames" min="0"></label> <!-- This needs to be connected to database -->
+               
+                    
+                    <h6></h6>
+                    <label>Eggs Seen:<input type="radio" name="EggsSeen" value="Yes">Yes</label>
                     <label><input type="radio" name="EggsSeen" value="No" checked>No</label><br>
                     <label>Comments:<input type="text" name="EggComments"></label>
                 </div>
 
                 <div>
-                    <h4>Population</h4>
+                    <h5>Population</h5>
+                    <!--
                     <label><input type="radio" name="Population" value="Stro">Strong</label>
                     <label><input type="radio" name="Population" value="Mod">Moderate</label>
                     <label><input type="radio" name="Population" value="Weak">Weak<br></label>
                     <label><input type="radio" name="Population" value="NA" checked hidden></label>
+                    -->
+                    <label>Seams of Bees:<input type="number" name="Population" min="0" ></label><!-- This needs to be properly connected to database --> 
                     <label>Crowded?<input type="radio" name="Crowded" value="Yes">Yes</label>
                     <label><input type="radio" name="Crowded" value="No" checked>No</label>                    
                 </div>
-
+<!--
                 <div>
                     <h4>Excessive Drone Cells</h4>
                     <label><input type="radio" name="ExcesiveDrone" value="No" checked>No</label>
                     <label><input type="radio" name="ExcesiveDrone" value="Yes">Yes</label><br>                    
                     <label>Comments:<input type="text" name="DroneComments"></label>
                 </div>
-
-                <div>
-                    <h4>Queen Cells</h4><!-- this is a good spot for a colapsable form -->
+-->
+ <!--               <div>
+                    <h4>Queen Cells</h4><!-- this is a good spot for a colapsable form --><!--
                     <label><input type="radio" name="QueenCells" value="No" checked>No</label>
                     <label><input type="radio" name="QueenCells" value="Yes">Yes:</label><br>    
                     <label>Along frame bottom (swarm cells):#<input type="number" name="SwarmCellNum" min="0"></label><br>
                     <label>Converted worker cell (supraceedure or emergency cells):#<input type="number" name="SupraCellNum" min="0"></label>
                 </div>
-                
+        -->        
                 <div>
-                    <h4>Food Stores</h4>
+                    <h5>Food Stores</h5>
                     <label>Honey:<input type="radio" name="HoneyStores" value="Plenty">Plenty</label>                    
                     <label><input type="radio" name="HoneyStores" value="Fine">Fine</label>                    
                     <label><input type="radio" name="HoneyStores" value="Sparse">Sparse</label>
-                    <label><input type="radio" name="HoneyStores" value="NA" checked hidden></label><br>
+                    <label><input type="radio, hidden" name="HoneyStores" value="NA" checked hidden></label><br>
                     <label>Pollen:<input type="radio" name="PollenStores" value="Plenty">Plenty</label>                    
                     <label><input type="radio" name="PollenStores" value="Fine">Fine</label>                    
                     <label><input type="radio" name="PollenStores" value="Sparse">Sparse</label>
-                    <label><input type="hidden" name="PollenStores" value="NA" checked ></label>
+                    <label><input type="radio, hidden" name="PollenStores" value="NA" checked hidden></label>
                 </div>
                 
-                <div>
+     <!--       <div> 
                     <h4>Hive Condition</h4>
                     <label><input type="checkbox" name="HiveCdns[Norm]" value="1">Normal</label>
                     <label><input type="checkbox" name="HiveCdns[BraceComb]" value="1">Brace Comb</label>
@@ -175,10 +179,10 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="checkbox" name="HiveCdns[Stink]" value="1">Foul odor</label>
                     <label><input type="checkbox" name="HiveCdns[Damage]" value="1">Equip. Damage</label>
                     <label><input type="checkbox" name="HiveCdns[Other]" value="1">Other:</label><input type="text" name="HiveCdnOtherText">
-                </div>
+                </div>-->
 
                 <div>
-                    <h4>Disease/Pests/Death</h4>                    
+                    <h5>Disease/Pests/Death</h5>                    
                     <h5>Verroa mites</h5><!-- this is a good spot for a colapsable form -->
                     <label>Mite Check:<input type="radio" name="MiteCheck" value="No" checked>No</label>
                     <label><input type="radio" name="MiteCheck" value="Yes">Yes</label><br>                    
@@ -213,6 +217,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="checkbox" name="OtherProbs[EFB]" value="1">E. Foulbrood</label>
                     <label><input type="checkbox" name="OtherProbs[AFB]" value="1">A. Foulbrood</label>
                     <label><input type="checkbox" name="OtherProbs[Beetle]" value="1">Hive Beetle</label>
+                    <!-- Add wax moth -->
                     <label><input type="checkbox" name="OtherProbs[Other]" value="1">Other:<input type="text" name="OtherProbOtherText"></label><br>
                     <input type="hidden" name="OtherProbs[NA]" value="0">
                     <label>Treatments:<input type="text" name="OtherProbTreat"></label><br>                    
@@ -224,7 +229,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label>Suspected Cause:<input type="text" name="DeadComments"></label>                
                 </div>           
                     
-                <div>
+          <!--  <div>
                     <h4>Actions Taken</h4>                    
                     <label><input type="checkbox" name="Actions[FedSugar]" value="1">Fed Hive (Suryp)</label>                    
                     <label><input type="checkbox" name="Actions[FedPollen]" value="1">Fed Hive (Pollen Patty)</label>
@@ -242,9 +247,9 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label>Merged Hive #<input type="text" name="ActionsMergedHiveNum"></label>
                     <label><input type="checkbox" name="Recs[ReplaceEquip]" value="1">Replaced Equipment</label>
                     <label><input type="checkbox" name="Actions[Other]" value="1">Other:</label><input type="text" name="ActionsOtherText">                    
-                </div>
+                </div>-->
                     
-                <div>
+        <!--    <div>
                     <h4>Recommendations:</h4>
                     <label><input type="checkbox" name="Recs[FedSugar]" value="1">Feed Hive (Suryp)</label>                    
                     <label><input type="checkbox" name="Recs[FedPollen]" value="1">Feed Hive (Pollen Patty)</label>
@@ -258,7 +263,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="checkbox" name="Recs[HoneyHarvest]" value="1">Honey Harvest:</label>
                     <label><input type="checkbox" name="Recs[Other]" value="1">Other:</label><input type="text" name="RecOtherText"><br>                    
                     <label>Comments:<input type="text" name="RecComments"></label>
-                </div>
+                </div>-->
 
                 <div>                
                     <label>General Comments:<input type="text" name="GenComments"></label><br>
