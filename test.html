@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="js/jquery.js"></script>
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        .complete {
+            color: #bbb;
+        }
+    
+    </style>
+    
+</head>
+<body>    
+    <div id="page">
+        <h4 id="header">Test</h4>
+        <h5>Recommendations:</h5>
+        <ul>
+            <li id="one"><input type="checkbox">Feed Hive</li>
+            <li id="two"><input type="checkbox">Add Excluder</li>
+            <li id="three"><input type="checkbox">Add Box</li>
+            <li id="four"><input type="checkbox">Split</li>
+        </ul>
+        <div id="newItemButton"><button href="#" id="showForm">new item</button></div>
+        <form id="newItemForm">
+            <input type="text" id="itemDescription" placeholder="Add Recommendation..." />
+            <input type="submit" id="addButton" value="add" />
+        </form>
+        
+        
+        
+        <script src="js/rec.js"></script>
+    </div>
+</body>
+</html>

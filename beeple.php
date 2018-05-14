@@ -21,51 +21,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
         <!-- FONT –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
         <!-- CSS –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <link rel="stylesheet" href="style.css">
-        
-        
-    <style>
-        /* The Modal (background) */
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
-            padding-top: 100px; /* Location of the box */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-        }
-
-        /* Modal Content */
-        .MiteTreat {
-            background-color: #fefefe;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-        }
-
-        /* The Close Button */
-        .close {
-            color: #aaaaaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        </style>
-        
-        
+        <link rel="stylesheet" href="style.css">    
     </head>
 
 <body>
@@ -101,6 +57,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="radio" name="Temperament" value="Nervous" >Nervous</label>
                     <label><input type="radio" name="Temperament" value="Aggressive">Aggressive</label>
                     <label><input type="radio" name="Temperament" value="NA" checked hidden></label>
+                    <hr />
                 </div>
 
                 <div>
@@ -128,6 +85,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="radio" name="EggsSeen" value="Yes">Yes</label>
                     <label><input type="radio" name="EggsSeen" value="No" checked>No</label><br>
                     <label>Comments:<input type="text" name="EggComments"></label>
+                    <hr />
                 </div>
 
                 <div>
@@ -175,6 +133,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="checkbox" name="HiveCdns[Stink]" value="1">Foul odor</label>
                     <label><input type="checkbox" name="HiveCdns[Damage]" value="1">Equip. Damage</label>
                     <label><input type="checkbox" name="HiveCdns[Other]" value="1">Other:</label><input type="text" name="HiveCdnOtherText">
+                    <hr />
                 </div>
 
                 <div>
@@ -225,41 +184,9 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                 </div>           
                     
                 <div>
-                    <h4>Actions Taken</h4>                    
-                    <label><input type="checkbox" name="Actions[FedSugar]" value="1">Fed Hive (Suryp)</label>                    
-                    <label><input type="checkbox" name="Actions[FedPollen]" value="1">Fed Hive (Pollen Patty)</label>
-                    <label><input type="checkbox" name="Actions[Excluder]" value="1">Added Excluder</label>
-                    <label><input type="checkbox" name="Actions[Requeen]" value="1">Requeened</label>
-                    <label><input type="checkbox" name="Actions[SwapBox]" value="1">Swapped Brood Boxes</label>
-                    <label><input type="checkbox" name="Actions[RemoveComb]" value="1">Removed Old Comb:</label>
-                    <label>How many frames?<input type="number" name="ActionsRemoveCombNumber" min="0"></label>
-                    <label><input type="checkbox" name="Actions[HoneyHarvest]" value="1">Honey Harvested:</label>
-                    <label>How many Pounds?<input type="number" step="0.01" min="0" name="ActionsHoneyHarvNumber"></label>
-                    <label><input type="checkbox" name="Actions[AddBox]" value="1">Added Box</label>
-                    <label><input type="checkbox" name="Actions[Split]" value="1">Split Hive:</label>
-                    <label>New Hive #<input type="text" name="ActionsNewHiveNum"></label>
-                    <label><input type="checkbox" name="Actions[Merge]" value="1">Merged Hive:</label>
-                    <label>Merged Hive #<input type="text" name="ActionsMergedHiveNum"></label>
-                    <label><input type="checkbox" name="Recs[ReplaceEquip]" value="1">Replaced Equipment</label>
-                    <label><input type="checkbox" name="Actions[Other]" value="1">Other:</label><input type="text" name="ActionsOtherText">                    
+                    <h4>Recommendations:</h4>
                 </div>
                     
-                <div>
-                    <h4>Recommendations:</h4>
-                    <label><input type="checkbox" name="Recs[FedSugar]" value="1">Feed Hive (Suryp)</label>                    
-                    <label><input type="checkbox" name="Recs[FedPollen]" value="1">Feed Hive (Pollen Patty)</label>
-                    <label><input type="checkbox" name="Recs[Excluder]" value="1">Add Excluder</label>
-                    <label><input type="checkbox" name="Recs[AddBox]" value="1">Add Box</label>
-                    <label><input type="checkbox" name="Recs[Split]" value="1">Split</label>
-                    <label><input type="checkbox" name="Recs[Merge]" value="1">Merge Hive:</label>
-                    <label><input type="checkbox" name="Recs[ReplaceQueen]" value="1">Replace Queen</label>
-                    <label><input type="checkbox" name="Recs[SwarmWatch]" value="1">Swarming Imminent - Needs Monitoring</label>
-                    <label><input type="checkbox" name="Recs[ReplaceEquip]" value="1">Replace Equipment:<input type="text" name="RecReplaceEquipText"></label>                   
-                    <label><input type="checkbox" name="Recs[HoneyHarvest]" value="1">Honey Harvest:</label>
-                    <label><input type="checkbox" name="Recs[Other]" value="1">Other:</label><input type="text" name="RecOtherText"><br>                    
-                    <label>Comments:<input type="text" name="RecComments"></label>
-                </div>
-
                 <div>                
                     <label>General Comments:<input type="text" name="GenComments"></label><br>
                     <button type="submit">Submit</button>
@@ -268,33 +195,4 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
             </div>
         </div>   
 <script type='text/javascript' src='js/modal.js'></script>
-<script>
-
-        // Get the modal
-        var modal = document.getElementById('MiteModal');
-
-        // Get the button that opens the modal
-        var btn = document.getElementById("MiteTreatBtn");
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks the button, open the modal 
-        btn.onclick = function() {
-            modal.css.display = "block";
-        }
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it            
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        } 
-
-</script>
 </body>
