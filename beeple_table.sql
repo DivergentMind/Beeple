@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2018 at 05:00 PM
+-- Generation Time: May 17, 2018 at 05:13 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -40,6 +40,7 @@ CREATE TABLE `beeple_table` (
   `Temperament` varchar(11) COLLATE utf8_bin NOT NULL,
   `QueenSeen` varchar(11) COLLATE utf8_bin NOT NULL,
   `LayingPattern` varchar(11) COLLATE utf8_bin NOT NULL,
+  `NumbBroodFrames` tinyint(4) NOT NULL,
   `EggsSeen` varchar(11) COLLATE utf8_bin NOT NULL,
   `EggComments` text COLLATE utf8_bin NOT NULL,
   `Population` tinyint(11) NOT NULL,
@@ -66,13 +67,13 @@ CREATE TABLE `beeple_table` (
 -- Dumping data for table `beeple_table`
 --
 
-INSERT INTO `beeple_table` (`ID`, `HiveID`, `Date`, `Worker`, `Loc`, `NumOfDeeps`, `NumOfMediums`, `NumOfShallows`, `Temperament`, `QueenSeen`, `LayingPattern`, `EggsSeen`, `EggComments`, `Population`, `Crowded`, `HoneyStores`, `PollenStores`, `MiteCheck`, `SamplingMethod`, `MiteCount`, `MiteTreat`, `MiteTreatType`, `MiteTreatOtherText`, `TreatRemoveDate`, `OtherProbs`, `OtherProbOtherText`, `OtherProbTreat`, `OtherProbComments`, `Dead`, `DeadComments`, `GenComments`) VALUES
-(1, '000', '2018-05-04', 'Me', 'Blackfoot, id', 0, 2, 0, 'Calm', 'No', 'Beaut', 'Yes', '', 0, 'No', 'Fine', 'Fine', 'No', 'NA', 0, 'No', 'NA', '', '0000-00-00', '', '', '', '', 'No', '', ''),
-(2, '000', '2018-05-05', 'Jordan and Jessie', 'Blackfoot, Id', 0, 2, 0, 'Calm', 'Yes', 'Beaut', 'Yes', '', 0, 'No', 'Fine', 'Fine', 'No', 'NA', 0, 'No', 'NA', '', '0000-00-00', '', '', '', '', 'No', '', ''),
-(3, '000', '2018-05-09', 'Jordan', 'Blackfoot, ID', 0, 3, 0, 'Calm', 'Yes', 'Beaut', 'Yes', '', 0, 'No', 'Fine', 'Fine', 'Yes', 'Sugar', 0, 'No', 'NA', '', '0000-00-00', '', '', '', '', 'No', '', 'Maybe ready to split in a few weeks.'),
-(10, 'blah', '0000-00-00', '', '', 0, 0, 0, 'NA', 'No', '0', 'No', '', 0, 'No', 'NA', 'NA', 'No', 'NA', 0, 'No', 'NA', '', '0000-00-00', 'a:1:{i:0;s:2:\"NA\";}', '', '', '', 'No', '', ''),
-(11, '000', '2018-05-13', 'Jordan', 'Blackfoot, ID', 0, 3, 0, 'NA', 'Yes', '0', 'Yes', '', 0, 'No', 'NA', 'NA', 'No', 'NA', 0, 'No', 'NA', '', '0000-00-00', 'a:1:{i:0;s:2:\"NA\";}', '', '', '', 'No', '', 'Making brood - getting ready to split'),
-(12, 'Blagh', '0000-00-00', 'lskfg', 'asdfgh', 0, 2, 0, 'NA', 'Yes', 'NA', 'No', 'empty', 5, 'No', 'NA', 'NA', 'No', 'NA', 0, 'No', 'NA', '', '0000-00-00', 'a:2:{i:0;s:3:\"Nos\";i:1;s:2:\"NA\";}', '', '', '', 'No', '', 'Delete me');
+INSERT INTO `beeple_table` (`ID`, `HiveID`, `Date`, `Worker`, `Loc`, `NumOfDeeps`, `NumOfMediums`, `NumOfShallows`, `Temperament`, `QueenSeen`, `LayingPattern`, `NumbBroodFrames`, `EggsSeen`, `EggComments`, `Population`, `Crowded`, `HoneyStores`, `PollenStores`, `MiteCheck`, `SamplingMethod`, `MiteCount`, `MiteTreat`, `MiteTreatType`, `MiteTreatOtherText`, `TreatRemoveDate`, `OtherProbs`, `OtherProbOtherText`, `OtherProbTreat`, `OtherProbComments`, `Dead`, `DeadComments`, `GenComments`) VALUES
+(1, '000', '2018-05-04', 'Me', 'Blackfoot, id', 0, 2, 0, 'Calm', 'No', 'Beaut', 0, 'Yes', '', 0, 'No', 'Fine', 'Fine', 'No', 'NA', 0, 'No', 'NA', '', '0000-00-00', '', '', '', '', 'No', '', ''),
+(2, '000', '2018-05-05', 'Jordan and Jessie', 'Blackfoot, Id', 0, 2, 0, 'Calm', 'Yes', 'Beaut', 0, 'Yes', '', 0, 'No', 'Fine', 'Fine', 'No', 'NA', 0, 'No', 'NA', '', '0000-00-00', '', '', '', '', 'No', '', ''),
+(3, '000', '2018-05-09', 'Jordan', 'Blackfoot, ID', 0, 3, 0, 'Calm', 'Yes', 'Beaut', 0, 'Yes', '', 0, 'No', 'Fine', 'Fine', 'Yes', 'Sugar', 0, 'No', 'NA', '', '0000-00-00', '', '', '', '', 'No', '', 'Maybe ready to split in a few weeks.'),
+(10, 'blah', '0000-00-00', '', '', 0, 0, 0, 'NA', 'No', '0', 0, 'No', '', 0, 'No', 'NA', 'NA', 'No', 'NA', 0, 'No', 'NA', '', '0000-00-00', 'a:1:{i:0;s:2:\"NA\";}', '', '', '', 'No', '', ''),
+(11, '000', '2018-05-13', 'Jordan', 'Blackfoot, ID', 0, 3, 0, 'NA', 'Yes', '0', 0, 'Yes', '', 0, 'No', 'NA', 'NA', 'No', 'NA', 0, 'No', 'NA', '', '0000-00-00', 'a:1:{i:0;s:2:\"NA\";}', '', '', '', 'No', '', 'Making brood - getting ready to split'),
+(12, 'Blagh', '0000-00-00', 'lskfg', 'asdfgh', 0, 2, 0, 'NA', 'Yes', 'NA', 0, 'No', 'empty', 5, 'No', 'NA', 'NA', 'No', 'NA', 0, 'No', 'NA', '', '0000-00-00', 'a:2:{i:0;s:3:\"Nos\";i:1;s:2:\"NA\";}', '', '', '', 'No', '', 'Delete me');
 
 --
 -- Indexes for dumped tables

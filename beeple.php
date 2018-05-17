@@ -116,7 +116,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="radio" name="LayingPattern" value="Medio">Mediocre (Little spotty)</label>
                     <label><input type="radio" name="LayingPattern" value="Poor">Poor (Spotty)</label>  
                     <label><input type="radio, hidden" name="LayingPattern" value="NA" checked hidden></label><br>
-                    <label>How Many Brood Frames:<input type="number" name="NumbBroodFrames" min="0"></label> <!-- This needs to be connected to database -->
+                    <label>How Many Brood Frames:<input type="number" name="NumbBroodFrames" min="0"></label> 
                
                     
                     <h6></h6>

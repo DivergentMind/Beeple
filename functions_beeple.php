@@ -65,9 +65,8 @@ if ( ! function_exists( 'process' ) ) {
             'NumOfShallows'     => 'FILTER_SANITIZE_NUMBER_INT',
             'Temperament'       => 'FILTER_SANITIZE_STRING',
             'QueenSeen'         => 'FILTER_SANITIZE_STRING',
-           
-            
             'LayingPattern'     => 'FILTER_SANITIZE_STRING',
+            'NumbBroodFrames'   => 'FILTER_SANITIZE_NUMBER_INT',
             'EggsSeen'          => 'FILTER_SANITIZE_STRING',
             'EggComments'       => 'FILTER_SANITIZE_STRING',
             'Population'        => 'FILTER_SANITIZE_NUMBER_INT',
@@ -114,13 +113,13 @@ if ( ! function_exists( 'process' ) ) {
         mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
         
         $stmt = $mysql->prepare("
-            INSERT INTO beeple_table (HiveID,Date,Worker,Loc,NumOfDeeps,NumOfMediums,NumOfShallows,Temperament,QueenSeen,LayingPattern,EggsSeen,EggComments,Population,Crowded,HoneyStores,PollenStores,MiteCheck,SamplingMethod,MiteCount,MiteTreat,MiteTreatType,MiteTreatOtherText,TreatRemoveDate,OtherProbs,OtherProbOtherText,OtherProbTreat,OtherProbComments,Dead,DeadComments,GenComments) 
-            VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+            INSERT INTO beeple_table (HiveID,Date,Worker,Loc,NumOfDeeps,NumOfMediums,NumOfShallows,Temperament,QueenSeen,LayingPattern,NumbBroodFrames,EggsSeen,EggComments,Population,Crowded,HoneyStores,PollenStores,MiteCheck,SamplingMethod,MiteCount,MiteTreat,MiteTreatType,MiteTreatOtherText,TreatRemoveDate,OtherProbs,OtherProbOtherText,OtherProbTreat,OtherProbComments,Dead,DeadComments,GenComments) 
+            VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
         ");
         
-        $stmt->bind_param("ssssiiisssssisssssisssssssssss", 
+        $stmt->bind_param("ssssiiissssssisssssisssssssssss", 
             $filter_post['HiveID'], $filter_post['Date'], $filter_post['Worker'], 
-            $filter_post['Loc'], $filter_post['NumOfDeeps'], $filter_post['NumOfMediums'], $filter_post['NumOfShallows'], $filter_post['Temperament'], $filter_post['QueenSeen'], $filter_post['LayingPattern'], $filter_post['EggsSeen'], $filter_post['EggComments'], $filter_post['Population'], $filter_post['Crowded'], $filter_post['HoneyStores'], $filter_post['PollenStores'], $filter_post['MiteCheck'], $filter_post['SamplingMethod'], $filter_post['MiteCount'], $filter_post['MiteTreat'], $filter_post['MiteTreatType'], $filter_post['MiteTreatOtherText'], $filter_post['TreatRemoveDate'], $filter_OtherProbs, $filter_post['OtherProbOtherText'], $filter_post['OtherProbTreat'], $filter_post['OtherProbComments'], $filter_post['Dead'], $filter_post['DeadComments'], $filter_post['GenComments']
+            $filter_post['Loc'], $filter_post['NumOfDeeps'], $filter_post['NumOfMediums'], $filter_post['NumOfShallows'], $filter_post['Temperament'], $filter_post['QueenSeen'], $filter_post['LayingPattern'], $filter_post['NumbBroodFrames'], $filter_post['EggsSeen'], $filter_post['EggComments'], $filter_post['Population'], $filter_post['Crowded'], $filter_post['HoneyStores'], $filter_post['PollenStores'], $filter_post['MiteCheck'], $filter_post['SamplingMethod'], $filter_post['MiteCount'], $filter_post['MiteTreat'], $filter_post['MiteTreatType'], $filter_post['MiteTreatOtherText'], $filter_post['TreatRemoveDate'], $filter_OtherProbs, $filter_post['OtherProbOtherText'], $filter_post['OtherProbTreat'], $filter_post['OtherProbComments'], $filter_post['Dead'], $filter_post['DeadComments'], $filter_post['GenComments']
         );
         
         $insert = $stmt->execute();
