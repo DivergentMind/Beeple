@@ -396,8 +396,46 @@ hr {
   clear: both; }
 
 
-/* Modal
+/* Modal/Hidden divs
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.accordion {
+    cursor: pointer;
+    transition: 0.4s;
+    width: 250px;
+    padding: 3px 18px 3px 0px;
+}
+
+.active, .accordion:hover {
+    background-color: #eee;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777; 
+    margin-left: 5px;
+    float: right;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.hidden {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+
+
+
+
+
+
+
 .modal {
     display: none; 
     position: fixed; /

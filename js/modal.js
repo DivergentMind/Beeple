@@ -25,5 +25,9 @@ jQuery(function( $ ){
                 modal.style.display = "none";
             }
         } 
+        
+        $('.hide').click(function() {
+            $('hidden').toggle( "slow", "linear" );
+        });
     });
 });
