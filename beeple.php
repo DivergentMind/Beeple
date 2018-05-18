@@ -106,21 +106,22 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="radio, hidden" name="PollenStores" value="NA" checked hidden></label>
                 </div>
                 
-
-                <h5>Disease/Pests/Death</h5>
-                <div>
-                    <button type="button" id="MiteTreatBtn">Recommend Mite Treatment</button>    
+                <hr />
+                <h4>Disease/Pests/Death</h4>
+                <div class="hideToggle">                        
+                    <h5 class="accordion">Verroa Mites</h5>
+                      <div class="hidden">  
+                        <label>Mite Check:<input type="radio" name="MiteCheck" value="No" checked>No</label>
+                        <label><input type="radio" name="MiteCheck" value="Yes">Yes</label><br>                    
+                        <label><input type="radio" name="SamplingMethod" value="Sugar" checked>Sugar Roll</label>                 
+                        <label><input type="radio" name="SamplingMethod" value="Alcohol">Alcohol Wash</label>
+                        <label><input type="radio" name="SamplingMethod" value="NA" checked>N/A<br></label>
+                        <label>How many mites in the sample?<input type="number" name="MiteCount" min="0" value="null"></label>
+                        <div>
+                            <button type="button" id="MiteTreatBtn">Recommend Mite Treatment</button>    
+                        </div>                      
+                    </div> 
                 </div>
-                <div>                    
-                    <h5>Verroa mites</h5>
-                    <label>Mite Check:<input type="radio" name="MiteCheck" value="No" checked>No</label>
-                    <label><input type="radio" name="MiteCheck" value="Yes">Yes</label><br>                    
-                    <label><input type="radio" name="SamplingMethod" value="Sugar" checked>Sugar Roll</label>                 
-                    <label><input type="radio" name="SamplingMethod" value="Alcohol">Alcohol Wash</label>
-                    <label><input type="radio" name="SamplingMethod" value="NA" checked>N/A<br></label>
-                    <label>How many mites in the sample?<input type="number" name="MiteCount" min="0" value="null"></label><br>
-                   <!-- <button type="button" id="MiteTreatBtn">Recommend Mite Treatment</button> -->
-                </div> 
                     
                 <div id="MiteModal" class="modal">
                     <div class="MiteTreat">
@@ -141,7 +142,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                 </div>
                     
                 <div class="hideToggle">
-                    <h5 class="hide">Other Problems</h5>
+                    <h5 class="accordion">Other Problems</h5>
                     <div class="hidden">
                         <label><input type="checkbox" name="OtherProbs[ChalkBrood]" value="1">Chalk Brood</label>
                         <label><input type="checkbox" name="OtherProbs[Nos]" value="1">Nosema</label>
@@ -157,7 +158,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                 </div>
                     
                 <div class="hideToggle">
-                    <h5>Dead Hive</h5><!-- this is a good spot for a colapsable form -->
+                    <h5 class="accordion">Dead Hive</h5><!-- this is a good spot for a colapsable form -->
                     <div class="hidden">                        
                         <label><input type="radio" name="Dead" value="No" checked>No</label>
                         <label><input type="radio" name="Dead" value="Yes">Yes</label><br>   
@@ -173,4 +174,21 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
             </div>
         </div>   
 <script type='text/javascript' src='js/modal.js'></script>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var hidden = this.nextElementSibling;
+    if (hidden.style.maxHeight){
+      hidden.style.maxHeight = null;
+    } else {
+      hidden.style.maxHeight = hidden.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+    
 </body>
