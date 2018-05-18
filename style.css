@@ -396,8 +396,11 @@ hr {
   clear: both; }
 
 
-/* Modal
+/* Modal/Hidden divs
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.hidden {
+    display: none;
+}
 .modal {
     display: none; 
     position: fixed; /
