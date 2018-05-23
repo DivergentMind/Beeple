@@ -56,7 +56,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="radio" name="Temperament" value="Calm">Calm</label>
                     <label><input type="radio" name="Temperament" value="Nervous" >Nervous</label>
                     <label><input type="radio" name="Temperament" value="Aggressive">Aggressive</label>
-                    <label><input type="radio, hidden" name="Temperament" value="NA" checked hidden></label>
+                    <!--<label><input type="radio, hidden" name="Temperament" value="NA" checked hidden></label>-->
                 </div>
                 <hr />
                     
@@ -74,7 +74,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label><input type="radio" name="LayingPattern" value="Beaut">Beautiful (Solid &amp; Uniform)</label>
                     <label><input type="radio" name="LayingPattern" value="Medio">Mediocre (Little spotty)</label>
                     <label><input type="radio" name="LayingPattern" value="Poor">Poor (Spotty)</label>  
-                    <label><input type="radio, hidden" name="LayingPattern" value="NA" checked hidden></label><br>
+                    <!--<label><input type="radio, hidden" name="LayingPattern" value="NA" checked hidden></label>--><br>
                     <label>How Many Brood Frames:<input type="number" name="NumbBroodFrames" min="0"></label> 
                
                     
@@ -99,11 +99,11 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                     <label>Honey:<input type="radio" name="HoneyStores" value="Plenty">Plenty</label>                    
                     <label><input type="radio" name="HoneyStores" value="Fine">Fine</label>                    
                     <label><input type="radio" name="HoneyStores" value="Sparse">Sparse</label>
-                    <label><input type="radio, hidden" name="HoneyStores" value="NA" checked hidden></label><br>
+                   <!-- <label><input type="radio, hidden" name="HoneyStores" value="NA" checked hidden></label>--><br>
                     <label>Pollen:<input type="radio" name="PollenStores" value="Plenty">Plenty</label>                    
                     <label><input type="radio" name="PollenStores" value="Fine">Fine</label>                    
                     <label><input type="radio" name="PollenStores" value="Sparse">Sparse</label>
-                    <label><input type="radio, hidden" name="PollenStores" value="NA" checked hidden></label>
+                   <!-- <label><input type="radio, hidden" name="PollenStores" value="NA" checked hidden></label> -->
                 </div>
                 
                 <hr />
@@ -126,18 +126,18 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                 <div id="MiteModal" class="modal">
                     <div class="MiteTreat">
                         <span class="close">&times;</span>
-                        <label>Mite Treatment:<input type="radio" name="MiteTreat" value="No" checked>No</label><!-- this is a good spot for a colapsable form -->
+                        <label>Mite Treatment:<input type="radio" name="MiteTreat" value="No" checked>No</label>
                         <label><input type="radio" name="MiteTreat" value="Yes">Yes</label><br>
-                        <label><input type="radio" name="MiteTreatType" value="NA" checked hidden></label> 
+                        <!--<label><input type="radio" name="MiteTreatType" value="NA" checked hidden></label> -->
                         <label><input type="radio" name="MiteTreatType" value="MiteTreatOils">Essential Oils</label>                    
                         <label><input type="radio" name="MiteTreatType" value="MiteTreatApivar">Apivar</label>                    
                         <label><input type="radio" name="MiteTreatType" value="MiteTreatApistan">Apistan or Checkmate+</label>                    
                         <label><input type="radio" name="MiteTreatType" value="MiteTreatFAcid">Formic Acid</label>                    
                         <label><input type="radio" name="MiteTreatType" value="MiteTreatOxAcid">Oxalic Acid</label>                    
-                        <label><input type="radio" name="MiteTreatType" value="MiteTreatHops">Hop Guard</label>                    
-                        <label><input type="radio" name="MiteTreatType" value="MiteTreatOther">Other:</label><input type="text" name="MiteTreatOtherText"><br>               
+                        <label><input type="radio" name="MiteTreatType" value="MiteTreatHops">Hop Guard</label><br>                    
+                        <label><input type="radio" name="MiteTreatType" value="MiteTreatOther">Other:</label><input type="text" name="MiteTreatOtherText"><br>             
                         <label>When do treatments need to be tended/removed?:<input type="date" name="TreatRemoveDate"></label>
-                        <input type="hidden" name="MiteTreatType" value="NA" checked><!--Hide--> 
+                        <!--<input type="hidden" name="MiteTreatType" value="NA" checked>--><!--Hide--> 
                     </div>
                 </div>
                     
@@ -151,14 +151,14 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                         <label><input type="checkbox" name="OtherProbs[Beetle]" value="1">Hive Beetle</label>
                         <!-- Add wax moth -->
                         <label><input type="checkbox" name="OtherProbs[Other]" value="1">Other:<input type="text" name="OtherProbOtherText"></label><br>
-                        <input type="hidden" name="OtherProbs[NA]" value="0">
+                        <!--<input type="hidden" name="OtherProbs[NA]" value="0">-->
                         <label>Treatments:<input type="text" name="OtherProbTreat"></label><br>                    
                         <label>Comments:<input type="text" name="OtherProbComments"></label>
                     </div>
                 </div>
                     
                 <div class="hideToggle">
-                    <h5 class="accordion">Dead Hive</h5><!-- this is a good spot for a colapsable form -->
+                    <h5 class="accordion">Dead Hive</h5>
                     <div class="hidden">                        
                         <label><input type="radio" name="Dead" value="No" checked>No</label>
                         <label><input type="radio" name="Dead" value="Yes">Yes</label><br>   
