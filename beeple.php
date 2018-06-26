@@ -46,18 +46,18 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                         <label>Who Worked Hive: <input type="text" name="Worker"></label>        
                         <label>Location: <input type="text" name="Loc"></label> <br>
                     </div>
-                    <h5>Hive Size:</h5>
+                    <!--<h5>Hive Size:</h5>
                     <label>Deeps:<input type="number" name="NumOfDeeps" min="0"></label>        
                     <label>Mediums:<input type="number" name="NumOfMediums" min="0"></label>                    
-                    <label>Shallows:<input type="number" name="NumOfShallows" min="0"></label>
+                    <label>Shallows:<input type="number" name="NumOfShallows" min="0"></label>-->
                 </div>
-                <div>
+                <div> <!--
                     <h5>Hive Temperament</h5>
                     <label><input type="radio" name="Temperament" value="Calm">Calm</label>
                     <label><input type="radio" name="Temperament" value="Nervous" >Nervous</label>
-                    <label><input type="radio" name="Temperament" value="Aggressive">Aggressive</label>
+                    <label><input type="radio" name="Temperament" value="Aggressive">Aggressive</label> -->
                     <!--<label><input type="radio, hidden" name="Temperament" value="NA" checked hidden></label>-->
-                </div>
+                </div> 
                 <hr />
                     
                 <h4>Queen and Brood</h4>
@@ -90,8 +90,8 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                 <div>
                     <h5>Population</h5>
                     <label>Seams of Bees:<input type="number" name="Population" min="0" ></label><br> 
-                    <label>Crowded?<input type="radio" name="Crowded" value="Yes">Yes</label>
-                    <label><input type="radio" name="Crowded" value="No" checked>No</label>                    
+                    <!--<label>Crowded?<input type="radio" name="Crowded" value="Yes">Yes</label> 
+                    <label><input type="radio" name="Crowded" value="No" checked>No</label>    -->                
                 </div>
 
                 <div>
@@ -128,7 +128,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                         <span class="close">&times;</span>
                         <label>Mite Treatment:<input type="radio" name="MiteTreat" value="No" checked>No</label>
                         <label><input type="radio" name="MiteTreat" value="Yes">Yes</label><br>
-                        <!--<label><input type="radio" name="MiteTreatType" value="NA" checked hidden></label> -->
+                        <label><input type="radio" name="MiteTreatType" value="NA" checked hidden></label> 
                         <label><input type="radio" name="MiteTreatType" value="MiteTreatOils">Essential Oils</label>                    
                         <label><input type="radio" name="MiteTreatType" value="MiteTreatApivar">Apivar</label>                    
                         <label><input type="radio" name="MiteTreatType" value="MiteTreatApistan">Apistan or Checkmate+</label>                    
@@ -137,7 +137,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                         <label><input type="radio" name="MiteTreatType" value="MiteTreatHops">Hop Guard</label><br>                    
                         <label><input type="radio" name="MiteTreatType" value="MiteTreatOther">Other:</label><input type="text" name="MiteTreatOtherText"><br>             
                         <label>When do treatments need to be tended/removed?:<input type="date" name="TreatRemoveDate"></label>
-                        <!--<input type="hidden" name="MiteTreatType" value="NA" checked>--><!--Hide--> 
+                        <input type="hidden" name="MiteTreatType" value="NA" checked><!--Hide--> 
                     </div>
                 </div>
                     
