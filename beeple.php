@@ -10,7 +10,6 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
     $insert = process($_POST);      
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -25,11 +24,16 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
     </head>
 
 <body>
-        <?php 
-            if ( isset( $insert ) ) { 
-                echo do_messages($insert);
-            }
-        ?>
+    <?php 
+        if ( isset( $insert ) ) { 
+            echo do_messages($insert);
+        }
+    ?>
+    <nav>
+        <div class="nav-menu">
+            <?php include 'includes/nav-menu.php';?>
+        </div>
+    </nav>
         <div>
             <h1>Hive Inspection Sheet</h1>
             <div>

@@ -20,7 +20,11 @@
         	$results[] = $row;
         }
         ?>
-
+        <nav>
+            <div class="nav-menu">
+                <?php include 'includes/nav-menu.php';?>
+            </div>
+        </nav>
         <table>
             <thead>
                 <tr>    
