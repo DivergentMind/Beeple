@@ -24,6 +24,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
     </head>
 
 <body>
+    <div class="container">
     <?php 
         if ( isset( $insert ) ) { 
             echo do_messages($insert);
@@ -45,7 +46,7 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                 <div class="row">
                     <div class="u-full-width">
                         <label>Hive ID: <input type="text" name="HiveID"></label>
-                        <label>Date: <input type="date" name="Date"></label>
+                        <label>Date: <input type="date" name="Date" value="<?php echo date('Y-m-d'); ?>" ></label>
                         <!-- Date input not supported in all browsers, consider using a polyphill. Also look up what 'polyfill' means-->
                         <label>Who Worked Hive: <input type="text" name="Worker"></label>        
                         <label>Location: <input type="text" name="Loc"></label> <br>
@@ -176,7 +177,8 @@ if ( ! empty( $_POST ) ) {//print_r($_POST);
                 </div>
                 </form>
             </div>
-        </div>   
+        </div> 
+    </div>
 <script type='text/javascript' src='js/modal.js'></script>
 <script>
 var acc = document.getElementsByClassName("accordion");
