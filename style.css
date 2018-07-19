@@ -13,6 +13,7 @@
 - Grid
 - Base Styles
 - Typography
+- Nav
 - Links
 - Buttons
 - Forms
@@ -32,7 +33,7 @@
 .container {
   position: relative;
   width: 100%;
-  max-width: 960px;
+  max-width: 1040px;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box; }
@@ -155,7 +156,18 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
 p {
   margin-top: 0; }
 
-
+/* Nav
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+nav {
+    padding-bottom: 70px;
+}
+nav a {
+    text-decoration-line: none; 
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-right: 10px;
+}
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
@@ -222,6 +234,9 @@ input[type="button"].button-primary:focus {
   color: #FFF;
   background-color: #1EAEDB;
   border-color: #1EAEDB; }
+.inspection-btn{
+    float: right;
+}
 
 
 /* Forms
@@ -485,7 +500,11 @@ there.
 @media (min-width: 400px) {}
 
 /* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {}
+@media (min-width: 550px) {
+    .container {
+        margin-top:8rem;
+    }
+}
 
 /* Larger than tablet */
 @media (min-width: 750px) {}
